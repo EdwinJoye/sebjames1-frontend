@@ -1,0 +1,11 @@
+.gallery__container-main {
+  display: flex;
+  background-color: red;
+  /* height: 100vh; */
+}
+.gallery__container-1 {
+  flex: 1;
+}
+.gallery__container-2 {
+  flex: 8;
+}
