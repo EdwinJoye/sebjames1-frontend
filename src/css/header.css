@@ -1,31 +1,44 @@
 .header__all-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 130px;
-  border-bottom: 0.2px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  height: 120px;
+  border-bottom: 0.2px solid rgba(255, 255, 255, 0.15);
 }
-.header__socialMedia-container,
+.header__social-media-container,
 .header__look-basket-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  position: absolute;
   height: 100%;
-  padding: 0 40px;
-  background-color: pink;
+  top: 0;
+  padding: 0 2%;
 }
-.header__socialMedia-container img,
+.header__social-media-container {
+  left: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+.header__look-basket-container {
+  right: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+.header__social-media-container img,
 .header__look-basket-container img {
   width: 20px;
   height: 20px;
-  margin: 5px;
+  margin: 7px;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+.header__social-media-container img:hover,
+.header__look-basket-container img:hover {
+  opacity: 0.5;
+  transition: 0.1s ease-out;
 }
 .header__links-signature-container {
   display: flex;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
 }
 .header__links-container-1,
 .header__links-container-2 {
@@ -46,6 +59,8 @@
   padding: 10px;
   color: white;
 }
-.header__look-basket-container {
-  width: 200px;
+.header__links-container-1 span:hover,
+.header__links-container-2 span:hover {
+  color: rgba(255, 255, 255, 0.15);
+  transition: 0.1s ease-out;
 }

@@ -13,13 +13,14 @@ import "../css/header.css";
 const Header = () => {
   return (
     <div className="header__all-container">
-      <div className="header__socialMedia-container">
+      <div className="header__social-media-container">
         <img src={Facebook} alt="fb" />
         <img src={Pinterest} alt="pint" />
         <img src={Instagram} alt="ins" />
         <img src={LinkedIn} alt="link" />
         <img src={Send} alt="send" />
       </div>
+
       <div className="header__links-signature-container">
         <div className="header__links-container-1">
           <Link>
@@ -33,7 +34,9 @@ const Header = () => {
           </Link>
         </div>
         <div className="header__signature-container">
-          <img src={Signature} alt="sign" />
+          <Link>
+            <img src={Signature} alt="sign" />
+          </Link>
         </div>
         <div className="header__links-container-2">
           <Link>
@@ -47,6 +50,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
+
       <div className="header__look-basket-container">
         <img src={Loupe} alt="loupe" />
         <img src={Bag} alt="bag" />
