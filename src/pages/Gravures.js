@@ -1,9 +1,9 @@
-import HeaderTop from "../components/HeaderTop";
+import Header from "../components/Header";
 
 const Gravures = () => {
   return (
     <div>
-      <HeaderTop></HeaderTop>
+      <Header></Header>
       <div>Gravures</div>
     </div>
   );

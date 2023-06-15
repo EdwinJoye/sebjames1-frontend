@@ -1,10 +1,10 @@
-import HeaderTop from "../components/HeaderTop";
+import Header from "../components/Header";
+import "../css/home.css";
 
 const Home = () => {
   return (
-    <div>
-      <HeaderTop></HeaderTop>
-      <div>Home</div>
+    <div className="home__all-container">
+      <Header></Header>
     </div>
   );
 };

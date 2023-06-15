@@ -1,11 +1,11 @@
-import HeaderTop from "../components/HeaderTop";
+import Header from "../components/Header";
 import HeaderLeft from "../components/HeaderLeft";
 import "../css/gallery.css";
 
 const Gallery = () => {
   return (
     <div>
-      <HeaderTop></HeaderTop>
+      <Header></Header>
       <div className="gallery__container-main">
         <div className="gallery__container-1">
           <HeaderLeft></HeaderLeft>

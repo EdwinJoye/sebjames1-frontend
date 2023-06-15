@@ -1,9 +1,9 @@
-import HeaderTop from "../components/HeaderTop";
+import Header from "../components/Header";
 
 const Croquis = () => {
   return (
     <div>
-      <HeaderTop></HeaderTop>
+      <Header></Header>
       <div>Croquis</div>
     </div>
   );

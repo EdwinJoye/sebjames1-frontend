@@ -1,7 +1,6 @@
 .gallery__container-main {
   display: flex;
   background-color: red;
-  /* height: 100vh; */
 }
 .gallery__container-1 {
   flex: 1;

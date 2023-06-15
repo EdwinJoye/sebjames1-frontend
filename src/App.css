@@ -1,6 +1,7 @@
 body {
   --def: #090e0c;
   --inv: #fff;
+  background-color: yellowgreen;
 }
 * {
   box-sizing: border-box;

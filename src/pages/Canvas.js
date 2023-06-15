@@ -1,9 +1,9 @@
-import HeaderTop from "../components/HeaderTop";
+import Header from "../components/Header";
 
 const Canvas = () => {
   return (
     <div>
-      <HeaderTop></HeaderTop>
+      <Header></Header>
       <div>Canvas</div>
     </div>
   );
