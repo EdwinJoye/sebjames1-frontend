@@ -1,28 +1,55 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Gallery from "./pages/Gallery";
-import Canvas from "./pages/Canvas";
-import Croquis from "./pages/Croquis";
-import Fresques from "./pages/Fresques";
-import Gravures from "./pages/Gravures";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Layout from "../src/components/Layout";
+import Home from "./pages/Mains/Home";
+import About from "./pages/Mains/About";
+import Contact from "./pages/Mains/Contact";
+import Products from "./pages/Products/Products";
+import Product from "./pages/Products/Product";
+import Portfolio from "./pages/Arts/Portfolio";
+import Shop from "../src/pages/Mains/Shop";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home></Home>,
+  },
+  {
+    element: <Layout></Layout>,
+    children: [
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/products/:id",
+        element: <Products></Products>,
+      },
+      {
+        path: "/product/:id",
+        element: <Product></Product>,
+      },
+      {
+        path: "/portfolio",
+        element: <Portfolio></Portfolio>,
+      },
+      {
+        path: "/shop",
+        element: <Shop></Shop>,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/about" element={<About></About>}></Route>
-        <Route path="/contact" element={<Contact></Contact>}></Route>
-        <Route path="/gallery" element={<Gallery></Gallery>}></Route>
-        <Route path="/canvas" element={<Canvas></Canvas>}></Route>
-        <Route path="/croquis" element={<Croquis></Croquis>}></Route>
-        <Route path="/fresques" element={<Fresques></Fresques>}></Route>
-        <Route path="/gravures" element={<Gravures></Gravures>}></Route>
-      </Routes>
-    </Router>
+    <div>
+      <RouterProvider router={router}></RouterProvider>
+    </div>
   );
 }
 

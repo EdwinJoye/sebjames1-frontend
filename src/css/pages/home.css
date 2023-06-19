@@ -1,0 +1,12 @@
+.home__all-container {
+  background-image: url("../../img/home/screen-1.jpg");
+  background-size: cover;
+  height: 100vh;
+  /* height: 100vh;
+  width: 100%;
+  position: absolute; */
+}
+/* .home__swiperSlide-img {
+  height: 100vh;
+  width: 100%;
+} */
