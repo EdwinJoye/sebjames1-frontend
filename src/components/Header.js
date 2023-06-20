@@ -28,11 +28,17 @@ const Header = () => {
     >
       {console.log(isPortofolio, "HEADER IS PORTFOLIO")}
       <div className="header__left-container">
-        <img src={Facebook} alt="fb" />
+        <a href="https://www.facebook.com/seb.james.98">
+          <img src={Facebook} alt="fb" />
+        </a>
         <img src={Pinterest} alt="pint" />
-        <img src={Instagram} alt="ins" />
+        <a href="https://www.instagram.com/sebjamesart/">
+          <img src={Instagram} alt="ins" />
+        </a>
         <img src={LinkedIn} alt="link" />
-        <img src={Send} alt="send" />
+        <a className="contact__button" href="mailto:sebj19@gmail.com">
+          <img src={Send} alt="send" />
+        </a>
       </div>
       <div className="header__center-container">
         <div className="header__links-container-1">
