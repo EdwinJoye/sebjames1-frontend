@@ -1,7 +1,7 @@
 import axios from "axios";
-// import Header from "../../components/Header";
-import "../../css/pages/home.css";
 import { useEffect, useState } from "react";
+
+import "../../css/pages/home.css";
 
 const Portfolio = () => {
   const [data, setData] = useState([]);
@@ -12,7 +12,9 @@ const Portfolio = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:1337/api/paintings");
+      const response = await axios.get(
+        "http://localhost:1337/api/screens?populate=*"
+      );
       setData(response.data);
     } catch (error) {
       console.error("Error retrieving data:", error);
@@ -20,7 +22,11 @@ const Portfolio = () => {
   };
   return (
     <div>
-      {console.log(data.data[0].attributes.ids)}
+      {/* <Header isActive={isActive}></Header> */}
+      {/* {console.log(data.data[0].attributes.publishedAt)} */}
+
+      {console.log(data)}
+      <img src="http://localhost:1337/uploads/screen_1_7dd00ca93d.jpg" alt="" />
       <div>
         {/* {data.data.attributes.map((item, key) => {
           return (

@@ -1,17 +1,32 @@
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Facebook from "../img/icons/facebook-white.png";
 import Pinterest from "../img/icons/pinterest-white.png";
 import Instagram from "../img/icons/instagram-white.png";
 import LinkedIn from "../img/icons/linkedIn-white.png";
 import Send from "../img/icons/send-white.png";
-import Signature from "../img/signatures/signature-white.png";
+import SignatureWhite from "../img/signatures/signature-white.png";
+import SignatureBlack from "../img/signatures/signature-black.png";
 import Loupe from "../img/icons/loupe-white.png";
 import Bag from "../img/icons/bag-white.png";
 import "../css/components/header.css";
 
 const Header = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const isAbout = location.pathname === "/about";
+  const isPortofolio = location.pathname === "/portfolio";
+  const isArticles = location.pathname === "/articles";
+  const isContact = location.pathname === "/contact";
+  const isShop = location.pathname === "/shop";
+
   return (
-    <div className="header__all-container">
+    <div
+      className={
+        isHome ? "header__all-container-white" : "header__all-container-black"
+      }
+    >
+      {console.log(isPortofolio, "HEADER IS PORTFOLIO")}
       <div className="header__left-container">
         <img src={Facebook} alt="fb" />
         <img src={Pinterest} alt="pint" />
@@ -19,40 +34,64 @@ const Header = () => {
         <img src={LinkedIn} alt="link" />
         <img src={Send} alt="send" />
       </div>
-
       <div className="header__center-container">
         <div className="header__links-container-1">
-          <Link to="about">
-            <span>ABOUT</span>
+          <Link to="/about">
+            <span className={isAbout ? "white" : ""}>ABOUT</span>
           </Link>
           <Link to="/portfolio">
-            <span>PORTFOLIO</span>
+            <span className={isPortofolio ? "white" : ""}>PORTFOLIO</span>
           </Link>
-          <Link>
-            <span>COURSES</span>
+          <Link to="/articles">
+            <span className={isArticles ? "white" : ""}>ARTICLES</span>
           </Link>
         </div>
         <div className="header__signature-container">
           <Link to="/">
-            <img src={Signature} alt="sign" />
+            <img
+              className={isHome ? "block" : "none"}
+              src={SignatureWhite}
+              alt="sign"
+            />
+            <img
+              className={isHome ? "none" : "block"}
+              src={SignatureBlack}
+              alt="sign"
+            />
+            <div className="header__text-line-container">
+              <div
+                className={
+                  isHome
+                    ? "header__signature-line-white"
+                    : "header__signature-line-black"
+                }
+              ></div>
+              <span className="header__signature-text">fine art & tips</span>
+              <div
+                className={
+                  isHome
+                    ? "header__signature-line-white"
+                    : "header__signature-line-black"
+                }
+              ></div>
+            </div>
           </Link>
         </div>
         <div className="header__links-container-2">
-          <Link to="home">
-            <span>HOME</span>
+          <Link to="/">
+            <span className={isHome ? "white" : ""}>HOME</span>
           </Link>
-          <Link>
-            <span>SHOP</span>
+          <Link to="/contact">
+            <span className={isContact ? "white" : ""}>CONTACT</span>
           </Link>
-          <Link>
-            <span>ARTICLES</span>
+          <Link to="/shop">
+            <span className={isShop ? "white" : ""}>SHOP</span>
           </Link>
         </div>
       </div>
 
       <div className="header__right-container">
         <img src={Loupe} alt="loupe" />
-
         <div className="cartIcon">
           <img src={Bag} alt="bag" />
           <span>0</span>
