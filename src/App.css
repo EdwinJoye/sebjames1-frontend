@@ -20,3 +20,50 @@ body {
 .none {
   display: none;
 }
+.flex {
+  display: flex;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.container {
+  margin: 0 10%;
+}
+.overlay__all-container {
+  position: relative;
+  background-color: yellow;
+  width: 300px;
+  margin: 10px;
+}
+.overlay__img-container {
+  width: 100%;
+  overflow: hidden;
+}
+.overlay__img-container img {
+  width: 100%;
+}
+.overlay__container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: opacity 0.45s ease-in-out;
+  opacity: 0;
+}
+.overlay__container:hover {
+  opacity: 1;
+}
+
+.overlay__text {
+}
+.test {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: space-between;
+  /* background-color: yellowgreen; */
+}

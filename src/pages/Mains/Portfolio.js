@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-import "../../css/pages/home.css";
+import "../../css/pages/portfolio.css";
 
 const Portfolio = () => {
   const [data, setData] = useState([]);
@@ -21,17 +20,33 @@ const Portfolio = () => {
     }
   };
   return (
-    <div>
-      {console.log(data, "DATA PORTFOLIO")}
-      {/* <img src="http://localhost:1337/uploads/screen_1_7dd00ca93d.jpg" alt="" /> */}
+    <div className="portfolio__all-container container">
       {data.data && (
-        <div>
+        <div className="test">
           {data.data.map((item) => {
-            // console.log(item);
             return (
               <>
                 {item.attributes.picture.data.map((picture) => {
-                  return <img src={picture.attributes.formats.medium.url} />;
+                  return (
+                    <div className="overlay__all-container">
+                      <div className="overlay__img-container">
+                        <img
+                          src={picture.attributes.formats.medium.url}
+                          alt="engravings"
+                        />
+                      </div>
+                      <div className="overlay__container">
+                        <div className="overlay__text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat.
+                        </div>
+                        <div>25 JUIN 1987</div>
+                      </div>
+                    </div>
+                  );
                 })}
               </>
             );
