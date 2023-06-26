@@ -26,7 +26,6 @@ const Header = () => {
         isHome ? "header__all-container-white" : "header__all-container-black"
       }
     >
-      {console.log(isPortofolio, "HEADER IS PORTFOLIO")}
       <div className="header__left-container">
         <a href="https://www.facebook.com/seb.james.98">
           <img src={Facebook} alt="fb" />

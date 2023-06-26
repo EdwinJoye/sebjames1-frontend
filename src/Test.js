@@ -1,46 +1,44 @@
-// import { RouterProvider, createBrowserRouter } from "react-router-dom";
-// import LocationWrapper from "./LocationWrapper";
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home></Home>,
-//   },
-//   {
-//     element: <Layout></Layout>,
-//     children: [
-//       {
-//         path: "/about",
-//         element: <About></About>,
-//       },
-//       {
-//         path: "/contact",
-//         element: <Contact></Contact>,
-//       },
-//       {
-//         path: "/products/:id",
-//         element: <Products></Products>,
-//       },
-//       {
-//         path: "/product/:id",
-//         element: <Product></Product>,
-//       },
-//       {
-//         path: "/portfolio",
-//         element: <Portfolio></Portfolio>,
-//       },
-//       {
-//         path: "/shop",
-//         element: <Shop></Shop>,
-//       },
-//     ],
-//   },
-// ]);
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+// import ImgOverlay from "../components/ImgOverlay";
+// import "../css/pages/portfolio.css";
 
-// function App() {
+// const Portfolio = () => {
+//   const [data, setData] = useState([]);
 
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+
+//   const fetchData = async () => {
+//     try {
+//       const response = await axios.get(
+//         "http://localhost:1337/api/upload/files?populate=*"
+//       );
+//       setData(response.data);
+//     } catch (error) {
+//       console.error("Error retrieving data:", error);
+//     }
+//   };
 //   return (
-//     <div>
-//       <RouterProvider router={router}></RouterProvider>
+//     <div className="portfolio__all-container container">
+//       <div className="test">
+//         {data.map((item) => {
+//           return (
+//             <div>
+//               <ImgOverlay picture={item.formats.medium.url}></ImgOverlay>
+
+//               {item.related.map((dat) => {
+//                 return <div>{dat.author}</div>;
+//               })}
+
+//             </div>
+//           );
+//         })}
+//       </div>
 //     </div>
 //   );
-// }
+// };
+// export default Portfolio;
+
+// {data.data && ()}

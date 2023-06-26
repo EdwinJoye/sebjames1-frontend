@@ -1,56 +1,37 @@
-import "./App.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "../src/components/Layout";
-import Home from "./pages/Mains/Home";
-import About from "./pages/Mains/About";
-import Contact from "./pages/Mains/Contact";
-import Products from "./pages/Products/Products";
-import Product from "./pages/Products/Product";
-import Portfolio from "./pages/Mains/Portfolio";
-import Shop from "../src/pages/Mains/Shop";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import ImgOverlay from "../components/ImgOverlay";
+import "../css/pages/portfolio.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home></Home>,
-  },
-  {
-    element: <Layout></Layout>,
-    children: [
-      {
-        path: "/about",
-        element: <About></About>,
-      },
-      {
-        path: "/contact",
-        element: <Contact></Contact>,
-      },
-      {
-        path: "/products/:id",
-        element: <Products></Products>,
-      },
-      {
-        path: "/product/:id",
-        element: <Product></Product>,
-      },
-      {
-        path: "/portfolio",
-        element: <Portfolio></Portfolio>,
-      },
-      {
-        path: "/shop",
-        element: <Shop></Shop>,
-      },
-    ],
-  },
-]);
+const Portfolio = () => {
+  const [data, setData] = useState([]);
 
-function App() {
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:1337/api/upload/files?populate=*"
+      );
+      setData(response.data);
+    } catch (error) {
+      console.error("Error retrieving data:", error);
+    }
+  };
   return (
-    <div>
-      <RouterProvider router={router}></RouterProvider>
+    <div className="portfolio__all-container container">
+      <div className="test">
+        {data.map((item) => {
+          return (
+            <div>
+              <ImgOverlay picture={item.formats.medium.url}></ImgOverlay>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
-}
-
-export default App;
+};
+export default Portfolio;

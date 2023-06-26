@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Mains/Home";
-import About from "../src/pages/Mains/About";
-import Contact from "../src/pages/Mains/Contact";
-import Shop from "../src/pages/Mains/Shop";
-import Portfolio from "./pages/Mains/Portfolio";
-import Articles from "../src/pages/Mains/Articles";
-import Products from "../src/pages/Products/Products";
-import Product from "../src/pages/Products/Product";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "../src/pages/Contact";
+import Shop from "../src/pages/Shop";
+import Portfolio from "./pages/Portfolio";
+import Articles from "../src/pages/Articles";
+import Products from "../src/pages/Products";
+import Product from "./pages/Product";
+// import Test from "./Test";
 
 function LocationWrapper() {
   // const location = useLocation();
@@ -21,6 +22,7 @@ function LocationWrapper() {
       <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
       <Route path="/products/:id" element={<Products></Products>}></Route>
       <Route path="/product/:id" element={<Product></Product>}></Route>
+      {/* <Route path="/test" element={<Test></Test>}></Route> */}
     </Routes>
   );
 }

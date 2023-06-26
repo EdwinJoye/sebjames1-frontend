@@ -1,0 +1,47 @@
+.test {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 6000px;
+  align-items: center;
+  /* background-color: yellowgreen; */
+}
+.overlay__all-container {
+  position: relative;
+  background-color: yellow;
+  margin: 10px;
+  width: 340px;
+}
+.overlay__img-container {
+  overflow: hidden;
+}
+.overlay__img-container img {
+  display: block;
+  width: 100%;
+}
+.overlay__container {
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: opacity 0.45s ease-in-out;
+  opacity: 0;
+}
+.overlay__container:hover {
+  opacity: 1;
+}
+.overlay__title,
+.overlay__date {
+  color: white;
+}
+.overlay__date {
+  margin-top: 20px;
+}
