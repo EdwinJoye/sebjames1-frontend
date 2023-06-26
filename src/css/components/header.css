@@ -2,9 +2,14 @@
 .header__all-container-black {
   position: relative;
   height: 140px;
-  border-bottom: 1px solid white;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
-  background-color: pink;
+  /* background-color: pink; */
+}
+.header__all-container-white {
+  border-bottom: 1px solid white;
+}
+.header__all-container-black {
+  border-bottom: 1px solid black;
 }
 .header__all-container-white {
   background-color: transparent;
@@ -12,7 +17,7 @@
   position: absolute;
 }
 .header__all-container-black {
-  background-color: pink;
+  /* background-color: pink; */
 }
 .header__all-container-white .header__signature-text,
 .header__all-container-white .header__links-container-1 span,
@@ -29,8 +34,13 @@
 .header__all-container-black span.white {
   color: white !important;
 }
-.header__left-container,
-.header__right-container {
+.header__all-container-white span.black {
+  color: black !important;
+}
+.header__left-container-black,
+.header__left-container-white,
+.header__right-container-black,
+.header__right-container-white {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,26 +49,40 @@
   top: 0;
   padding: 0 2%;
 }
-.header__left-container {
+.header__left-container-black,
+.header__left-container-white {
   left: 0;
-  /* border-right: 1px solid rgba(255, 255, 255, 0.15); */
+}
+.header__left-container-white {
   border-right: 1px solid white;
 }
-.header__right-container {
-  right: 0;
-  border-left: 1px solid white;
-  /* border-left: 1px solid rgba(255, 255, 255, 0.15); */
+.header__left-container-black {
+  border-right: 1px solid black;
 }
-.header__left-container img,
-.header__right-container img {
+.header__right-container-black,
+.header__right-container-white {
+  right: 0;
+}
+.header__right-container-black {
+  border-left: 1px solid black;
+}
+.header__right-container-white {
+  border-left: 1px solid white;
+}
+.header__left-container-black img,
+.header__left-container-white img,
+.header__right-container-black img,
+.header__right-container-white img {
   width: 20px;
   height: 20px;
   margin: 7px;
   cursor: pointer;
   transition: filter 0.3s;
 }
-.header__left-container img:hover,
-.header__right-container img:hover {
+.header__left-container-black img:hover,
+.header__left-container-white img:hover,
+.header__right-container-black img:hover,
+.header__right-container-white img:hover {
   opacity: 0.5;
   transition: 0.1s ease-out;
 }

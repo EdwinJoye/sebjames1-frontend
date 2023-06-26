@@ -26,16 +26,35 @@ const Header = () => {
         isHome ? "header__all-container-white" : "header__all-container-black"
       }
     >
-      <div className="header__left-container">
-        <a href="https://www.facebook.com/seb.james.98">
+      <div
+        className={
+          !isHome
+            ? "header__left-container-black"
+            : "header__left-container-white"
+        }
+      >
+        <a
+          className={!isHome ? "black-png" : ""}
+          href="https://www.facebook.com/seb.james.98"
+        >
           <img src={Facebook} alt="fb" />
         </a>
-        <img src={Pinterest} alt="pint" />
-        <a href="https://www.instagram.com/sebjamesart/">
+        <a className={!isHome ? "black-png" : ""} href="http://hello.com">
+          <img src={Pinterest} alt="pint" />
+        </a>
+        <a
+          className={!isHome ? "black-png" : ""}
+          href="https://www.instagram.com/sebjamesart/"
+        >
           <img src={Instagram} alt="ins" />
         </a>
-        <img src={LinkedIn} alt="link" />
-        <a className="contact__button" href="mailto:sebj19@gmail.com">
+        <a className={!isHome ? "black-png" : ""} href="http://hello.com">
+          <img src={LinkedIn} alt="link" />
+        </a>
+        <a
+          className={!isHome ? "black-png" : ""}
+          href="mailto:sebj19@gmail.com"
+        >
           <img src={Send} alt="send" />
         </a>
       </div>
@@ -84,7 +103,7 @@ const Header = () => {
         </div>
         <div className="header__links-container-2">
           <Link to="/">
-            <span className={isHome ? "white" : ""}>HOME</span>
+            <span className={isHome ? "black" : ""}>HOME</span>
           </Link>
           <Link to="/contact">
             <span className={isContact ? "white" : ""}>CONTACT</span>
@@ -95,10 +114,20 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="header__right-container">
-        <img src={Loupe} alt="loupe" />
+      <div
+        className={
+          isHome
+            ? "header__right-container-white"
+            : "header__right-container-black"
+        }
+      >
+        <a className={!isHome ? "black-png" : ""} href="http://hello.com">
+          <img src={Loupe} alt="loupe" />
+        </a>
         <div className="cartIcon">
-          <img src={Bag} alt="bag" />
+          <a className={!isHome ? "black-png" : ""} href="http://hello.com">
+            <img src={Bag} alt="bag" />
+          </a>
           <span>0</span>
         </div>
       </div>

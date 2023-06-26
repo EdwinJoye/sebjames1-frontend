@@ -1,15 +1,7 @@
-.test {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 6000px;
-  align-items: center;
-  /* background-color: yellowgreen; */
-}
 .overlay__all-container {
   position: relative;
   background-color: yellow;
-  margin: 10px;
+  margin-bottom: 10px;
   width: 340px;
 }
 .overlay__img-container {

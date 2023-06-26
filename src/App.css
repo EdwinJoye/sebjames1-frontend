@@ -25,10 +25,29 @@ body {
 .absolute {
   position: absolute;
 }
+.fadeIn {
+  animation: 2s ease fadeIn;
+}
 .container {
-  margin: 130px 10% 0 10%;
+  margin: 100px 10% 0 10%;
 }
 h3 {
   color: white;
   text-transform: uppercase;
+}
+.black-png {
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 1;
+  }
 }

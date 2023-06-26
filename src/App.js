@@ -6,11 +6,10 @@ import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-  let isActive = 0;
   return (
     <Router>
       <Header></Header>
-      <LocationWrapper isActive={isActive}></LocationWrapper>
+      <LocationWrapper></LocationWrapper>
       <ScrollToTop></ScrollToTop>
     </Router>
   );

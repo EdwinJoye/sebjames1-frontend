@@ -21,9 +21,19 @@ const Portfolio = () => {
     }
   };
   return (
-    <div className="container">
+    <div className="container fadeIn">
+      <div className="portfolio__menu-container">
+        <div className="portfolio__menu-left">
+          <span>see all</span>
+        </div>
+        <div className="portfolio__menu-right">
+          <span>engravings</span>
+          <span>watercolors</span>
+          <span>frecoes</span>
+        </div>
+      </div>
       {data && (
-        <div className="test">
+        <div className="portfolio__imgs-container">
           {data.map((item) => {
             return (
               <div>
