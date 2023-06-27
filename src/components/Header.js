@@ -23,7 +23,9 @@ const Header = () => {
   return (
     <div
       className={
-        isHome ? "header__all-container-white" : "header__all-container-black"
+        isHome
+          ? "header__all-container-white header__home"
+          : "header__all-container-black"
       }
     >
       <div

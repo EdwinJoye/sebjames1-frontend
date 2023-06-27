@@ -1,24 +1,21 @@
 .header__all-container-white,
 .header__all-container-black {
-  position: relative;
   height: 140px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
   /* background-color: pink; */
 }
-.header__all-container-white {
-  border-bottom: 1px solid white;
-}
-.header__all-container-white {
-  border-bottom: 1px solid white;
-}
-.header__all-container-white {
-  background-color: transparent;
-  width: 100%;
+.header__home {
   position: absolute;
+  z-index: 99;
+  width: 100%;
 }
-.header__all-container-black {
-  /* background-color: pink; */
+.header__all-container-white {
+  border-bottom: 1px solid white;
 }
+.header__all-container-white {
+  border-bottom: 1px solid white;
+}
+
 .header__all-container-white .header__signature-text,
 .header__all-container-white .header__links-container-1 span,
 .header__all-container-white .header__links-container-2 span,
@@ -48,6 +45,7 @@
   height: 100%;
   top: 0;
   padding: 0 2%;
+  height: 140px;
 }
 .header__left-container-black,
 .header__left-container-white {

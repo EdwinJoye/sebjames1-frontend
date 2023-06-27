@@ -1,17 +1,24 @@
 .slider__all-container {
-  background-color: pink;
+  /* background-color: pink; */
   height: 100%;
-  width: 100%;
 }
 .slider__swiper-container {
-  background-color: yellow;
+  /* background-color: yellow; */
   height: 100%;
 }
 .slider__img {
   width: 100%;
   height: 100vh;
+  display: block;
+  transition: transform 1s;
+  /* -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); */
 }
 .swiper-button-prev,
 .swiper-button-next {
-  color: white;
+  color: white !important;
+}
+.swiper-pagination-bullet {
+  background-color: white !important;
 }
