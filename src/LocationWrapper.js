@@ -7,7 +7,7 @@ import Portfolio from "./pages/Portfolio";
 import Articles from "../src/pages/Articles";
 import Products from "../src/pages/Products";
 import Product from "./pages/Product";
-// import Test from "./Test";
+import Slider from "./components/Slider";
 
 function LocationWrapper() {
   // const location = useLocation();
@@ -22,7 +22,7 @@ function LocationWrapper() {
       <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
       <Route path="/products/:id" element={<Products></Products>}></Route>
       <Route path="/product/:id" element={<Product></Product>}></Route>
-      {/* <Route path="/test" element={<Test></Test>}></Route> */}
+      <Route path="/slider" element={<Slider></Slider>}></Route>
     </Routes>
   );
 }

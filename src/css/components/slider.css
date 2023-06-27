@@ -1,0 +1,17 @@
+.slider__all-container {
+  background-color: pink;
+  height: 100%;
+  width: 100%;
+}
+.slider__swiper-container {
+  background-color: yellow;
+  height: 100%;
+}
+.slider__img {
+  width: 100%;
+  height: 100vh;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+}

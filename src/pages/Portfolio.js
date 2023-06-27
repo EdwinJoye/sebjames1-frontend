@@ -36,17 +36,15 @@ const Portfolio = () => {
         <div className="portfolio__imgs-container">
           {data.map((item) => {
             return (
-              <div>
+              <div className="portfolio__img-container" key={item.ids}>
                 {item.related &&
                   item.related.map((infos) => {
                     return (
-                      <div>
-                        <ImgOverlay
-                          picture={item.formats.medium.url}
-                          date={infos.date}
-                          title={infos.title}
-                        ></ImgOverlay>
-                      </div>
+                      <ImgOverlay
+                        picture={item.formats.medium.url}
+                        date={infos.date}
+                        title={infos.title}
+                      ></ImgOverlay>
                     );
                   })}
               </div>
