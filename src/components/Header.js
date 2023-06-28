@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Facebook from "../img/icons/facebook-white.png";
 import Pinterest from "../img/icons/pinterest-white.png";
 import Instagram from "../img/icons/instagram-white.png";
@@ -20,13 +21,34 @@ const Header = () => {
   const isContact = location.pathname === "/contact";
   const isShop = location.pathname === "/shop";
 
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      setVisible(
+        (prevScrollPos > currentScrollPos &&
+          prevScrollPos - currentScrollPos > 70) ||
+          currentScrollPos < 10
+      );
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos, visible]);
+
   return (
     <div
-      className={
-        isHome
-          ? "header__all-container-white header__home"
-          : "header__all-container-black"
-      }
+      className={`header__all-container-black ${
+        visible ? "navbar--visible" : "navbar--hidden"
+      }`}
     >
       <div
         className={

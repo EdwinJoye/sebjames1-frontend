@@ -1,7 +1,7 @@
 body {
   --def: #090e0c;
   --inv: #fff;
-  /* background-color: rgb(239, 236, 202); */
+  background-color: rgb(237, 236, 221);
 }
 * {
   box-sizing: border-box;
@@ -29,7 +29,7 @@ body {
   animation: 2s ease fadeIn;
 }
 .container {
-  margin: 100px 13% 0 13%;
+  margin: 15rem 13% 0 13%;
 }
 h3 {
   color: white;
