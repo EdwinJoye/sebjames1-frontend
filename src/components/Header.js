@@ -23,16 +23,15 @@ const Header = () => {
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [atTop, setAtTop] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
-      setVisible(
-        (prevScrollPos > currentScrollPos &&
-          prevScrollPos - currentScrollPos > 70) ||
-          currentScrollPos < 10
-      );
+      setVisible(currentScrollPos < prevScrollPos || currentScrollPos === 0);
+
+      setAtTop(currentScrollPos === 0);
 
       setPrevScrollPos(currentScrollPos);
     };
@@ -42,12 +41,17 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos, visible]);
+  }, [prevScrollPos]);
 
   return (
     <div
-      className={`header__all-container-black ${
-        visible ? "navbar--visible" : "navbar--hidden"
+      // className={`header__all-container ${
+      //   visible ? "navbar--visible" : "navbar--hidden"
+      // } ${isHome ? "header__all-container-home" : ""}`}
+      className={`header__all-container ${
+        visible ? "header--visible" : "header--hidden"
+      } ${atTop ? "header--top" : ""} ${
+        isHome ? "header__all-container-home" : ""
       }`}
     >
       <div

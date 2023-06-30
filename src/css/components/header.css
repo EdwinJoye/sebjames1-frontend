@@ -1,6 +1,6 @@
-.header__all-container-white,
-.header__all-container-black {
-  height: 9rem;
+.header__all-container-home,
+.header__all-container {
+  height: 6rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
   position: fixed;
   top: 0;
@@ -8,37 +8,39 @@
   width: 100%;
   transition: transform 0.5s ease;
   z-index: 100;
+}
+.header__all-container {
   background-color: rgb(237, 236, 221);
 }
-.header__home {
-  position: absolute;
+
+.header__all-container-home {
+  position: fixed;
   z-index: 99;
   width: 100%;
-}
-.header__all-container-white {
+  background-color: transparent !important;
   border-bottom: 1px solid white;
 }
-.header__all-container-white {
+.header__all-container-home {
   border-bottom: 1px solid white;
 }
 
-.header__all-container-white .header__signature-text,
-.header__all-container-white .header__links-container-1 span,
-.header__all-container-white .header__links-container-2 span,
-.header__all-container-white .cartIcon span {
+.header__all-container-home .header__signature-text,
+.header__all-container-home .header__links-container-1 span,
+.header__all-container-home .header__links-container-2 span,
+.header__all-container-home .cartIcon span {
   color: white;
 }
-.header__all-container-black .header__signature-text,
-.header__all-container-black .header__links-container-1 span,
-.header__all-container-black .header__links-container-2 span,
-.header__all-container-black .cartIcon span {
+.header__signature-text,
+.header__links-container-1 span,
+.header__links-container-2 span,
+.cartIcon span {
   color: black;
 }
-.header__all-container-black span.white {
-  color: white !important;
-}
-.header__all-container-white span.black {
+span.white {
   color: black !important;
+}
+.header__all-container-home span.black {
+  color: white !important;
 }
 .header__left-container-black,
 .header__left-container-white,
@@ -51,6 +53,11 @@
   height: 100%;
   top: 0;
   padding: 0 2%;
+}
+.header--top .header__left-container-black,
+.header--top .header__left-container-white,
+.header--top .header__right-container-black,
+.header--top .header__right-container-white {
   height: 9rem;
 }
 .header__left-container-black,
@@ -144,6 +151,9 @@
   font-weight: bold;
   font-size: 17px;
 }
+.header__all-container-home span {
+  color: white !important;
+}
 .header__links-container-1 span:hover,
 .header__links-container-2 span:hover {
   opacity: 0.5;
@@ -177,10 +187,14 @@
   z-index: 100;
 } */
 
-.navbar--hidden {
+.header--hidden {
   transform: translateY(-100%);
 }
 
-.navbar--visible {
+.header--visible {
   transform: translateY(0);
+}
+.header--top {
+  height: 9rem;
+  transition: height 0.5s;
 }
