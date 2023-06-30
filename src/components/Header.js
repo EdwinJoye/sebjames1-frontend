@@ -45,9 +45,6 @@ const Header = () => {
 
   return (
     <div
-      // className={`header__all-container ${
-      //   visible ? "navbar--visible" : "navbar--hidden"
-      // } ${isHome ? "header__all-container-home" : ""}`}
       className={`header__all-container ${
         visible ? "header--visible" : "header--hidden"
       } ${atTop ? "header--top" : ""} ${
