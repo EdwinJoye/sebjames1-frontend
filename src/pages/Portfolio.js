@@ -1,10 +1,10 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import ImgOverlay from "../components/ImgOverlay";
+import Card from "../components/Card";
 import "../css/pages/portfolio.css";
 
 const Portfolio = () => {
-  const [data, setData] = useState([]);
+  const [photos, setPhotos] = useState([]);
+  const [filteredPhotos, setFilteredPhotos] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -12,39 +12,54 @@ const Portfolio = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
+      const response = await fetch(
         "http://localhost:1337/api/upload/files?populate=*"
       );
-      setData(response.data);
+      const data = await response.json();
+      setPhotos(data);
     } catch (error) {
-      console.error("Error retrieving data:", error);
+      console.log(error);
     }
+  };
+
+  const handleFilter = (collection) => {
+    const filtered = photos.filter((photo) => photo.collection === collection);
+    setFilteredPhotos(filtered);
   };
   return (
     <div className="container fadeIn">
+      {console.log(filteredPhotos)}
       <div className="portfolio__menu-container">
         <div className="portfolio__menu-left">
           <span>see all</span>
         </div>
+
         <div className="portfolio__menu-right">
-          <span>engravings</span>
-          <span>watercolors</span>
-          <span>frecoes</span>
+          <button onClick={() => handleFilter("engraving")}>
+            <span>engravings</span>
+          </button>
+
+          <button onClick={() => handleFilter("watercolor")}>
+            <span>watercolors</span>
+          </button>
+          <button onClick={() => handleFilter("frescoe")}>
+            <span>frecoes</span>
+          </button>
         </div>
       </div>
-      {data && (
+      {photos && (
         <div className="portfolio__imgs-container">
-          {data.map((item) => {
+          {photos.map((item) => {
             return (
               <div className="portfolio__img-container" key={item.ids}>
                 {item.related &&
                   item.related.map((infos) => {
                     return (
-                      <ImgOverlay
+                      <Card
                         picture={item.formats.medium.url}
                         date={infos.date}
                         title={infos.title}
-                      ></ImgOverlay>
+                      ></Card>
                     );
                   })}
               </div>

@@ -18,8 +18,8 @@ function LocationWrapper() {
       <Route path="/about" element={<About></About>}></Route>
       <Route path="/articles" element={<Articles></Articles>}></Route>
       <Route path="/contact" element={<Contact></Contact>}></Route>
-      <Route path="/shop" element={<Shop></Shop>}></Route>
-      <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
+      <Route path="/shop/:id" element={<Shop></Shop>}></Route>
+      <Route path="/portfolio/:id" element={<Portfolio></Portfolio>}></Route>
       <Route path="/products/:id" element={<Products></Products>}></Route>
       <Route path="/product/:id" element={<Product></Product>}></Route>
       <Route path="/test" element={<Test></Test>}></Route>

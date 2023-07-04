@@ -1,0 +1,19 @@
+.shop__all-container {
+  display: flex;
+  gap: 40px;
+}
+.shop__left {
+  flex: 1;
+  position: sticky;
+  height: 100%;
+  top: 7rem;
+}
+.shop__right {
+  flex: 3;
+}
+.shop__filterItem {
+  margin-bottom: 20px;
+}
+.shop__filterItem h2 {
+  margin-bottom: 20px;
+}

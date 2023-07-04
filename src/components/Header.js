@@ -19,7 +19,7 @@ const Header = () => {
   const isPortofolio = location.pathname === "/portfolio";
   const isArticles = location.pathname === "/articles";
   const isContact = location.pathname === "/contact";
-  const isShop = location.pathname === "/shop";
+  const isShop = location.pathname === "/shop/:id";
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -88,7 +88,7 @@ const Header = () => {
           <Link to="/about">
             <span className={isAbout ? "white" : ""}>ABOUT</span>
           </Link>
-          <Link to="/portfolio">
+          <Link to="/portfolio/:id">
             <span className={isPortofolio ? "white" : ""}>PORTFOLIO</span>
           </Link>
           <Link to="/articles">
@@ -133,7 +133,7 @@ const Header = () => {
           <Link to="/contact">
             <span className={isContact ? "white" : ""}>CONTACT</span>
           </Link>
-          <Link to="/shop">
+          <Link to="/shop/:id">
             <span className={isShop ? "white" : ""}>SHOP</span>
           </Link>
         </div>

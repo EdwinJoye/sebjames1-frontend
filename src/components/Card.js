@@ -1,6 +1,6 @@
-import "../css/components/imgOverlay.css";
+import "../css/components/card.css";
 
-const ImgOverlay = ({ picture, title, date }) => {
+const Card = ({ picture, title, date }) => {
   return (
     <div className="overlay__all-container">
       <div className="overlay__img-container">
@@ -14,4 +14,4 @@ const ImgOverlay = ({ picture, title, date }) => {
   );
 };
 
-export default ImgOverlay;
+export default Card;
