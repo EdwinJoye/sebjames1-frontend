@@ -56,6 +56,9 @@ h3 {
 /* //////////////////////////////////////// WIDTH //////////////////////////////////////// */
 
 @media screen and (max-width: 1520px) {
+  .container {
+    margin: 15rem 10% 0 10%;
+  }
 }
 @media screen and (max-width: 1350px) {
 }
