@@ -13,7 +13,7 @@ const Portfolio = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:1337/api/upload/files?populate=*"
+        process.env.REACT_APP_API_URL + "/upload/files?populate=*"
       );
       const data = await response.json();
       setPhotos(data);

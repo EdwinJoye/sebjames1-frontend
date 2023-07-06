@@ -6,10 +6,10 @@ import Pinterest from "../img/icons/pinterest-white.png";
 import Instagram from "../img/icons/instagram-white.png";
 import LinkedIn from "../img/icons/linkedIn-white.png";
 import Send from "../img/icons/send-white.png";
-import SignatureWhite from "../img/signatures/signature-white.png";
-import SignatureBlack from "../img/signatures/signature-black.png";
+import Signature from "../img/signatures/signature-white.png";
 import Loupe from "../img/icons/loupe-white.png";
 import Bag from "../img/icons/bag-white.png";
+import Cart from "./Cart";
 import "../css/components/header.css";
 
 const Header = () => {
@@ -24,15 +24,14 @@ const Header = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [atTop, setAtTop] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
       setVisible(currentScrollPos < prevScrollPos || currentScrollPos === 0);
-
       setAtTop(currentScrollPos === 0);
-
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -45,41 +44,30 @@ const Header = () => {
 
   return (
     <div
-      className={`header__all-container ${
-        visible ? "header--visible" : "header--hidden"
-      } ${atTop ? "header--top" : ""} ${
-        isHome ? "header__all-container-home" : ""
+      className={` ${visible ? "header--visible" : "header--hidden"} ${
+        atTop ? "header--top" : "header__all-container"
       }`}
     >
-      <div
-        className={
-          !isHome
-            ? "header__left-container-black"
-            : "header__left-container-white"
-        }
-      >
+      <div className="header__left-container">
         <a
-          className={!isHome ? "black-png" : ""}
+          className={!atTop ? "black-png" : ""}
           href="https://www.facebook.com/seb.james.98"
         >
           <img src={Facebook} alt="fb" />
         </a>
-        <a className={!isHome ? "black-png" : ""} href="http://hello.com">
+        <a className={!atTop ? "black-png" : ""} href="http://hello.com">
           <img src={Pinterest} alt="pint" />
         </a>
         <a
-          className={!isHome ? "black-png" : ""}
+          className={!atTop ? "black-png" : ""}
           href="https://www.instagram.com/sebjamesart/"
         >
           <img src={Instagram} alt="ins" />
         </a>
-        <a className={!isHome ? "black-png" : ""} href="http://hello.com">
+        <a className={!atTop ? "black-png" : ""} href="http://hello.com">
           <img src={LinkedIn} alt="link" />
         </a>
-        <a
-          className={!isHome ? "black-png" : ""}
-          href="mailto:sebj19@gmail.com"
-        >
+        <a className={!atTop ? "black-png" : ""} href="mailto:sebj19@gmail.com">
           <img src={Send} alt="send" />
         </a>
       </div>
@@ -98,31 +86,14 @@ const Header = () => {
         <div className="header__signature-container">
           <Link to="/">
             <img
-              className={isHome ? "block" : "none"}
-              src={SignatureWhite}
-              alt="sign"
-            />
-            <img
-              className={isHome ? "none" : "block"}
-              src={SignatureBlack}
+              className={!atTop ? "black-png" : ""}
+              src={Signature}
               alt="sign"
             />
             <div className="header__text-line-container">
-              <div
-                className={
-                  isHome
-                    ? "header__signature-line-white"
-                    : "header__signature-line-black"
-                }
-              ></div>
+              <div className="header__signature-line"></div>
               <span className="header__signature-text">fine art & tips</span>
-              <div
-                className={
-                  isHome
-                    ? "header__signature-line-white"
-                    : "header__signature-line-black"
-                }
-              ></div>
+              <div className="header__signature-line"></div>
             </div>
           </Link>
         </div>
@@ -139,23 +110,16 @@ const Header = () => {
         </div>
       </div>
 
-      <div
-        className={
-          isHome
-            ? "header__right-container-white"
-            : "header__right-container-black"
-        }
-      >
-        <a className={!isHome ? "black-png" : ""} href="http://hello.com">
+      <div className="header__right-container">
+        <a className={!atTop ? "black-png" : ""} href="http://hello.com">
           <img src={Loupe} alt="loupe" />
         </a>
-        <div className="cartIcon">
-          <a className={!isHome ? "black-png" : ""} href="http://hello.com">
-            <img src={Bag} alt="bag" />
-          </a>
+        <div className="cartIcon" onClick={() => setOpen(!open)}>
+          <img className={!atTop ? "black-png" : ""} src={Bag} alt="bag" />
           <span>0</span>
         </div>
       </div>
+      {open && <Cart></Cart>}
     </div>
   );
 };

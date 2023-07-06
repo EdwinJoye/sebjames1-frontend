@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Slider from "../components/Slider";
 import Propositions from "../components/Propositions";
+import FeaturedProducts from "../components/FeaturedProducts";
 import "../css/pages/home.css";
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:1337/api/screens?populate=*"
+        process.env.REACT_APP_API_URL + "/screens?populate=*"
       );
       setData(response.data);
     } catch (error) {
@@ -29,12 +30,12 @@ const Home = () => {
         <div>
           {data.data.map((item) => {
             return (
-              <div>
+              <div key={item.id}>
                 {item.attributes.picture.data && (
                   <div>
                     {item.attributes.picture.data.map((pics) => {
                       return (
-                        <div className="none">
+                        <div key={pics.id} className="none">
                           {picsUrl.push(pics.attributes.formats.large.url)}
                         </div>
                       );
@@ -50,6 +51,11 @@ const Home = () => {
         <Slider picsUrl={picsUrl}></Slider>
       </div>
       <Propositions></Propositions>
+      <FeaturedProducts type={"engravings"}></FeaturedProducts>
+      <FeaturedProducts type={"watercolors"}></FeaturedProducts>
+      <FeaturedProducts type={"models"}></FeaturedProducts>
+      <FeaturedProducts type={"paintings"}></FeaturedProducts>
+      <FeaturedProducts type={"frescoes"}></FeaturedProducts>
     </div>
   );
 };

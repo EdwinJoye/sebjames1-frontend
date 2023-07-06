@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Cadi from "../img/icons/cadi-white.png";
+import { Link } from "react-router-dom";
+import Cart from "../img/icons/cart-white.png";
 import "../css/pages/product.css";
 
 const Product = () => {
@@ -20,9 +21,16 @@ const Product = () => {
         <img src={images[selectedImg]} alt="img2" />
       </div>
       <div className="product__right">
-        <h2>product</h2>
+        <h2>La pensée interne</h2>
         <span>299$</span>
         <p>
+          Painting by
+          <Link to="/about">
+            <b> SebJames</b>
+          </Link>
+        </p>
+        <p>60 x 40 cm</p>
+        <p className="product__description">
           Le Lorem Ipsum est simplement du faux texte employé dans la
           composition et la mise en page avant impression. Le Lorem Ipsum est le
           faux texte standard de l'imprimerie depuis les années 1500, quand un
@@ -41,11 +49,12 @@ const Product = () => {
           >
             -
           </button>
-          {quantity}
+          <div>{quantity}</div>
           <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
         </div>
         <div className="product__add-button">
-          <img src={Cadi} alt="" />
+          <img src={Cart} alt="cart" />
+          <span>ADD TO CART</span>
         </div>
       </div>
     </div>

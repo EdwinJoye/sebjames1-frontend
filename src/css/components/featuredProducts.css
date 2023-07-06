@@ -1,0 +1,13 @@
+.featuredProducts__all-container {
+  display: flex;
+  gap: 40px;
+  background-color: red;
+  margin-bottom: 20px;
+}
+
+.test-1 {
+  width: 300px;
+}
+.child {
+  width: 100%;
+}
