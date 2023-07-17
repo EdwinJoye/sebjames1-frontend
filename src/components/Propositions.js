@@ -15,7 +15,7 @@ const Propositions = () => {
       </div>
       <div className="propositions__title-img-container">
         <h4>Portfolio</h4>
-        <Link to="/portfolio" className="propositions__img-container">
+        <Link to="/portfolio/:id" className="propositions__img-container">
           <img
             src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1687277349/sebjames/gravure_3_5e4510822c.jpg"
             alt="prop2"

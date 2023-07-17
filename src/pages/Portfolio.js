@@ -1,72 +1,58 @@
-import { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
 import Card from "../components/Card";
+import { useParams } from "react-router-dom";
 import "../css/pages/portfolio.css";
 
 const Portfolio = () => {
-  const [photos, setPhotos] = useState([]);
-  const [filteredPhotos, setFilteredPhotos] = useState([]);
+  const catId = parseInt(useParams().id);
+  const { data, loading, error } = useFetch(`/products?populate=*`);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        process.env.REACT_APP_API_URL + "/upload/files?populate=*"
-      );
-      const data = await response.json();
-      setPhotos(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleFilter = (collection) => {
-    const filtered = photos.filter((photo) => photo.collection === collection);
-    setFilteredPhotos(filtered);
-  };
   return (
     <div className="container fadeIn">
-      {console.log(filteredPhotos)}
       <div className="portfolio__menu-container">
         <div className="portfolio__menu-left">
           <span>see all</span>
         </div>
 
         <div className="portfolio__menu-right">
-          <button onClick={() => handleFilter("engraving")}>
+          <button>
             <span>engravings</span>
           </button>
-
-          <button onClick={() => handleFilter("watercolor")}>
+          <button>
             <span>watercolors</span>
           </button>
-          <button onClick={() => handleFilter("frescoe")}>
+          <button>
             <span>frecoes</span>
           </button>
         </div>
       </div>
-      {photos && (
-        <div className="portfolio__imgs-container">
-          {photos.map((item) => {
-            return (
-              <div className="portfolio__img-container" key={item.ids}>
-                {item.related &&
-                  item.related.map((infos) => {
+      <div className="portfolio__imgs-container">
+        {error ? (
+          "Something wrong"
+        ) : loading ? (
+          "loading"
+        ) : (
+          <div>
+            {data?.map((item) => {
+              return (
+                <div key={item.id}>
+                  {item.attributes.img1.data.map((pic) => {
                     return (
-                      <Card
-                        picture={item.formats.medium.url}
-                        date={infos.date}
-                        title={infos.title}
-                      ></Card>
+                      <div className="portfolio__img-container" key={pic.id}>
+                        <Card
+                          picture={pic.attributes.url}
+                          title={item.attributes.title}
+                          date={item.attributes.date}
+                        ></Card>
+                      </div>
                     );
                   })}
-              </div>
-            );
-          })}
-        </div>
-      )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
