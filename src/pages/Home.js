@@ -2,6 +2,7 @@ import useFetch from "../hooks/useFetch";
 import Slider from "../components/Slider";
 import Propositions from "../components/Propositions";
 import FeaturedProducts from "../components/FeaturedProducts";
+import Test from "../components/Test";
 import "../css/pages/home.css";
 
 const Home = () => {
@@ -42,12 +43,11 @@ const Home = () => {
       <div className="home__slider-container">
         <Slider picsUrl={picsUrl}></Slider>
       </div>
+
       <Propositions></Propositions>
-      <FeaturedProducts type={"engraving"}></FeaturedProducts>
-      <FeaturedProducts type={"watercolor"}></FeaturedProducts>
-      <FeaturedProducts type={"model"}></FeaturedProducts>
-      <FeaturedProducts type={"painting"}></FeaturedProducts>
-      <FeaturedProducts type={"frescoe"}></FeaturedProducts>
+      <FeaturedProducts type={"trending"}></FeaturedProducts>
+      <FeaturedProducts type={"new"}></FeaturedProducts>
+      <Test subCategories={"trending"}></Test>
     </div>
   );
 };

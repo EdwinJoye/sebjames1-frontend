@@ -100,6 +100,7 @@ const Shop = () => {
           sort={sort}
           subCats={selectedSubCats}
         ></List>
+        {/* {console.log("shop", catId)} */}
       </div>
     </div>
   );
