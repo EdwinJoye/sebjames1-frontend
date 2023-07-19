@@ -23,6 +23,7 @@ const List = ({ subCats, maxPrice, catId, sort }) => {
                       return (
                         <div className="portfolio__img-container" key={pic.id}>
                           <Card
+                            id={pic.id}
                             picture={pic.attributes.url}
                             title={item.attributes.title}
                             date={item.attributes.date}

@@ -1,12 +1,11 @@
 import "../css/components/featuredProducts.css";
-import useFetch from "../hooks/useFetch";
+// import useFetch from "../hooks/useFetch";
 
-const Test = ({ subCategories }) => {
-  const { data, loading, error } = useFetch(`/products?populate=*`);
+const Test = () => {
+  //   const {} = useFetch(`/products?populate=*`);
 
   return (
     <div>
-      {console.log("test DATA", data)}
       {/* {error ? (
         "Something wrong"
       ) : loading ? (
@@ -33,6 +32,7 @@ const Test = ({ subCategories }) => {
           })}
         </div>
       )} */}
+      hello
     </div>
   );
 };
