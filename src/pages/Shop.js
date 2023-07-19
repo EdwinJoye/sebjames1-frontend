@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-import List from "../components/List";
+import List2 from "../components/List2";
 import "../css/pages/shop.css";
 
 const Shop = () => {
@@ -25,6 +25,7 @@ const Shop = () => {
   };
   return (
     <div className="container shop__all-container">
+      {console.log("SHOP DATA", data)}
       <div className="shop__left">
         <div className="shop__filterItem">
           <h2>Product Category</h2>
@@ -34,7 +35,7 @@ const Shop = () => {
             "loading"
           ) : (
             <div>
-              {data.map((item) => {
+              {data?.map((item) => {
                 return (
                   <div key={item.id}>
                     <input
@@ -94,13 +95,12 @@ const Shop = () => {
         </div>
       </div>
       <div className="shop__right">
-        <List
+        <List2
           catId={catId}
           maxPrice={maxPrice}
           sort={sort}
           subCats={selectedSubCats}
-        ></List>
-        {/* {console.log("shop", catId)} */}
+        ></List2>
       </div>
     </div>
   );
