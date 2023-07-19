@@ -22,7 +22,6 @@ const List2 = ({ subCats, maxPrice, catId, sort }) => {
                     {item.attributes.img1.data.map((pic) => {
                       return (
                         <div className="portfolio__img-container" key={pic.id}>
-                          {console.log("LIST2", item.id)}
                           <Card
                             id={item.id}
                             picture={pic.attributes.url}

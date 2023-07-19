@@ -40,6 +40,7 @@ const Portfolio = () => {
                     return (
                       <div className="portfolio__img-container" key={pic.id}>
                         <Card
+                          id={item.id}
                           picture={pic.attributes.url}
                           title={item.attributes.title}
                           date={item.attributes.date}

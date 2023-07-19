@@ -6,7 +6,7 @@ import "../css/pages/product.css";
 
 const Product = () => {
   const id = useParams().id;
-  const [selectedImg, setSelectedImg] = useState("img");
+  const [selectedImg, setSelectedImg] = useState("img1");
   const [quantity, setQuantity] = useState(1);
 
   const { data, loading } = useFetch(`/products/${id}?populate=*`);
@@ -18,35 +18,54 @@ const Product = () => {
       ) : (
         <>
           <div className="product__left">
-            <img
-              src={
-                process.env.REACT_APP_UPLOAD_URL +
-                data?.attributes?.img?.data?.attributes?.url
-              }
-              alt="img1"
-              onClick={() => setSelectedImg("img")}
-            />
-            <img
-              src={
-                process.env.REACT_APP_UPLOAD_URL +
-                data?.attributes?.img2?.data?.attributes?.url
-              }
-              alt="img2"
-              onClick={() => setSelectedImg("img2")}
-            />
+            {console.log("Product data", data)}
+            {data?.attributes?.img1?.data && (
+              <div>
+                {data?.attributes?.img1?.data?.map((pic1) => {
+                  return (
+                    <div key={pic1.id}>
+                      <img
+                        src={pic1.attributes.url}
+                        alt="img1"
+                        onClick={() => setSelectedImg("img1")}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+            {data?.attributes?.img2?.data && (
+              <div>
+                {data?.attributes?.img2?.data?.map((pic2) => {
+                  return (
+                    <div key={pic2.id}>
+                      <img
+                        src={pic2.attributes.url}
+                        alt="img2"
+                        onClick={() => setSelectedImg("img2")}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
           <div className="product__center">
-            <img
-              src={
-                process.env.REACT_APP_UPLOAD_URL +
-                data?.attributes[selectedImg]?.data?.attributes?.url
-              }
-              alt="img2"
-            />
+            {/* {data?.attributes[selectedImg]?.data && (
+              <div>
+                {data?.attributes[selectedImg]?.data?.map((pic) => {
+                  return (
+                    <div key={pic.id}>
+                      <img src={pic?.attributes?.url} alt="img" />
+                    </div>
+                  );
+                })}
+              </div>
+            )} */}
           </div>
           <div className="product__right">
             <h2>La pensée interne</h2>
-            <span>299$</span>
+            <span>{data?.attributes?.price}$</span>
             <p>
               Painting by
               <Link to="/about">

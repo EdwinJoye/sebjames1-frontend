@@ -12,7 +12,7 @@ const Test = () => {
         "loading"
       ) : (
         <div className="featuredProducts__all-container">
-          {console.log("TEST DATA", data)}
+    
           {data?.map((item) => {
             return (
               <div key={item.id} className="test-1">

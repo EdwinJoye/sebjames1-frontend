@@ -13,7 +13,6 @@ const List = ({ subCats, maxPrice, catId, sort }) => {
         "loading"
       ) : (
         <div>
-          {console.log("LIST subCats", subCats)}
           {data && (
             <div>
               {data?.map((item) => {
