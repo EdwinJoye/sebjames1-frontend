@@ -10,7 +10,7 @@ const Product = () => {
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img1");
   const [quantity, setQuantity] = useState(1);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const { data, loading } = useFetch(`/products/${id}?populate=*`);
 
   return (
@@ -20,28 +20,22 @@ const Product = () => {
       ) : (
         <>
           <div className="product__left">
-            <div>
-              <img
-                src={data?.attributes?.img1?.data[0].attributes?.url}
-                alt="img1"
-                onClick={() => setSelectedImg("img1")}
-              />
-            </div>
-            <div>
-              <img
-                src={data?.attributes?.img2?.data[0].attributes?.url}
-                alt="img2"
-                onClick={() => setSelectedImg("img2")}
-              />
-            </div>
+            <img
+              src={data?.attributes?.img1?.data[0]?.attributes?.url}
+              alt="img1"
+              onClick={() => setSelectedImg("img1")}
+            />
+            <img
+              src={data?.attributes?.img2?.data[0]?.attributes?.url}
+              alt="img2"
+              onClick={() => setSelectedImg("img2")}
+            />
           </div>
           <div className="product__center">
-            <div>
-              <img
-                src={data?.attributes[selectedImg].data[0].attributes?.url}
-                alt="img"
-              />
-            </div>
+            {/* <img
+              src={data?.attributes[selectedImg]?.data[0]?.attributes?.url}
+              alt="img"
+            /> */}
           </div>
           <div className="product__right">
             <h2>La pensée interne</h2>
@@ -77,28 +71,23 @@ const Product = () => {
               <div>{quantity}</div>
               <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
             </div>
-            <div className="product__add-button">
+            <div
+              className="product__add-button"
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    id: data.id,
+                    title: data.attributes.title,
+                    desc: data.attributes.description,
+                    price: data.attributes.price,
+                    img: data.attributes.img1.data[0].attributes.url,
+                    quantity,
+                  })
+                )
+              }
+            >
               <img src={Cart} alt="cart" />
-              {console.log(
-                "PRODUCT DATA",
-                data?.attributes?.img1?.data[0].attributes?.url
-              )}
-              <span
-                onClick={() =>
-                  dispatch(
-                    addToCart({
-                      id: data.id,
-                      title: data.attributes.title,
-                      desc: data.attributes.desc,
-                      price: data.attributes.price,
-                      img: data.attributes.img1.data[0].attributes.url,
-                      quantity,
-                    })
-                  )
-                }
-              >
-                ADD TO CART
-              </span>
+              <span>ADD TO CART</span>
             </div>
           </div>
         </>

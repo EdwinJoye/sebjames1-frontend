@@ -1,14 +1,28 @@
 .cart__all-container {
+  min-width: 336px;
   position: absolute;
   right: 0;
   z-index: 999;
   background-color: rgb(237, 236, 221);
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid white;
 }
-.cart__all-container h2 {
+.cart__title-close {
+  display: flex;
+  justify-content: space-between;
+}
+.cart__title-close h2 {
   margin-bottom: 20px;
 }
+.cart__title-close img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.cart__title-close img:hover {
+  opacity: 0.5;
+}
+
 .cart__img-infos-container {
   display: flex;
   gap: 10px;

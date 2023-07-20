@@ -10,6 +10,7 @@ import Signature from "../img/signatures/signature-white.png";
 import Loupe from "../img/icons/loupe-white.png";
 import Bag from "../img/icons/bag-white.png";
 import Cart from "./Cart";
+import { useSelector } from "react-redux";
 import "../css/components/header.css";
 
 const Header = () => {
@@ -20,11 +21,18 @@ const Header = () => {
   const isArticles = location.pathname === "/articles";
   const isContact = location.pathname === "/contact";
   const isShop = location.pathname === "/shop/:id";
+  const products = useSelector((state) => state.cart.products);
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [atTop, setAtTop] = useState(true);
   const [open, setOpen] = useState(false);
+
+  const totalQuantity = () => {
+    let quant = 0;
+    products.forEach((item) => (quant += item.quantity));
+    return quant;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,18 +81,18 @@ const Header = () => {
       </div>
       <div className="header__center-container">
         <div className="header__links-container-1">
-          <Link to="/about">
+          <Link to="/about" onClick={() => setOpen(false)}>
             <span className={isAbout ? "white" : ""}>ABOUT</span>
           </Link>
-          <Link to="/portfolio/:id">
+          <Link to="/portfolio/:id" onClick={() => setOpen(false)}>
             <span className={isPortofolio ? "white" : ""}>PORTFOLIO</span>
           </Link>
-          <Link to="/articles">
+          <Link to="/articles" onClick={() => setOpen(false)}>
             <span className={isArticles ? "white" : ""}>ARTICLES</span>
           </Link>
         </div>
         <div className="header__signature-container">
-          <Link to="/">
+          <Link to="/" onClick={() => setOpen(false)}>
             <img
               className={!atTop ? "black-png" : ""}
               src={Signature}
@@ -98,13 +106,13 @@ const Header = () => {
           </Link>
         </div>
         <div className="header__links-container-2">
-          <Link to="/">
+          <Link to="/" onClick={() => setOpen(false)}>
             <span className={isHome ? "black" : ""}>HOME</span>
           </Link>
-          <Link to="/contact">
+          <Link to="/contact" onClick={() => setOpen(false)}>
             <span className={isContact ? "white" : ""}>CONTACT</span>
           </Link>
-          <Link to="/shop/:id">
+          <Link to="/shop/:id" onClick={() => setOpen(false)}>
             <span className={isShop ? "white" : ""}>SHOP</span>
           </Link>
         </div>
@@ -116,10 +124,10 @@ const Header = () => {
         </a>
         <div className="cartIcon" onClick={() => setOpen(!open)}>
           <img className={!atTop ? "black-png" : ""} src={Bag} alt="bag" />
-          <span>0</span>
+          <span>{totalQuantity()}</span>
         </div>
       </div>
-      {open && <Cart></Cart>}
+      {open && <Cart setOpen={setOpen}></Cart>}
     </div>
   );
 };
