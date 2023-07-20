@@ -1,13 +1,14 @@
 import React from "react";
-import ProductsData from "../data/products.json";
 import DeleteIcon from "../img/icons/delete-red.png";
+import { useSelector } from "react-redux";
 import "../css/components/cart.css";
 
 const Cart = () => {
+  const products = useSelector((state) => state.cart.products);
   return (
     <div className="cart__all-container">
       <h2>Product in you cart</h2>
-      {ProductsData.map((item) => {
+      {products.map((item) => {
         return (
           <div className="cart__img-infos-container" key={item.id}>
             <img className="cart__img" src={item.img1} alt="cartImg" />

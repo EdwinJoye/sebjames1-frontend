@@ -2,13 +2,15 @@ import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import { Link, useParams } from "react-router-dom";
 import Cart from "../img/icons/cart-white.png";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartReducer";
 import "../css/pages/product.css";
 
 const Product = () => {
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img1");
   const [quantity, setQuantity] = useState(1);
-
+  const dispatch = useDispatch;
   const { data, loading } = useFetch(`/products/${id}?populate=*`);
 
   return (
@@ -18,50 +20,28 @@ const Product = () => {
       ) : (
         <>
           <div className="product__left">
-            {console.log("Product data", data)}
-            {data?.attributes?.img1?.data && (
-              <div>
-                {data?.attributes?.img1?.data?.map((pic1) => {
-                  return (
-                    <div key={pic1.id}>
-                      <img
-                        src={pic1.attributes.url}
-                        alt="img1"
-                        onClick={() => setSelectedImg("img1")}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-            {data?.attributes?.img2?.data && (
-              <div>
-                {data?.attributes?.img2?.data?.map((pic2) => {
-                  return (
-                    <div key={pic2.id}>
-                      <img
-                        src={pic2.attributes.url}
-                        alt="img2"
-                        onClick={() => setSelectedImg("img2")}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+            <div>
+              <img
+                src={data?.attributes?.img1?.data[0].attributes?.url}
+                alt="img1"
+                onClick={() => setSelectedImg("img1")}
+              />
+            </div>
+            <div>
+              <img
+                src={data?.attributes?.img2?.data[0].attributes?.url}
+                alt="img2"
+                onClick={() => setSelectedImg("img2")}
+              />
+            </div>
           </div>
           <div className="product__center">
-            {/* {data?.attributes[selectedImg]?.data && (
-              <div>
-                {data?.attributes[selectedImg]?.data?.map((pic) => {
-                  return (
-                    <div key={pic.id}>
-                      <img src={pic?.attributes?.url} alt="img" />
-                    </div>
-                  );
-                })}
-              </div>
-            )} */}
+            <div>
+              <img
+                src={data?.attributes[selectedImg].data[0].attributes?.url}
+                alt="img"
+              />
+            </div>
           </div>
           <div className="product__right">
             <h2>La pensée interne</h2>
@@ -99,7 +79,26 @@ const Product = () => {
             </div>
             <div className="product__add-button">
               <img src={Cart} alt="cart" />
-              <span>ADD TO CART</span>
+              {console.log(
+                "PRODUCT DATA",
+                data?.attributes?.img1?.data[0].attributes?.url
+              )}
+              <span
+                onClick={() =>
+                  dispatch(
+                    addToCart({
+                      id: data.id,
+                      title: data.attributes.title,
+                      desc: data.attributes.desc,
+                      price: data.attributes.price,
+                      img: data.attributes.img1.data[0].attributes.url,
+                      quantity,
+                    })
+                  )
+                }
+              >
+                ADD TO CART
+              </span>
             </div>
           </div>
         </>

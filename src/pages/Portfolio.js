@@ -1,10 +1,10 @@
 import useFetch from "../hooks/useFetch";
 import Card from "../components/Card";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import "../css/pages/portfolio.css";
 
 const Portfolio = () => {
-  const catId = parseInt(useParams().id);
+  // const catId = parseInt(useParams().id);
   const { data, loading, error } = useFetch(`/products?populate=*`);
 
   return (
