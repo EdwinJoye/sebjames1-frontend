@@ -10,6 +10,7 @@ const Shop = () => {
   const [sort, setSort] = useState(null);
   const [selectedSubCats, setSelectedSubCats] = useState([]);
   const { data, loading, error } = useFetch(
+    // `/products?populate=*`
     `/sub-categories?populate=*[filters][categories][id][$eq]=${catId}`
   );
 
@@ -25,6 +26,7 @@ const Shop = () => {
   };
   return (
     <div className="container shop__all-container">
+      {console.log("SHOP catId", catId)}
       <div className="shop__left">
         <div className="shop__filterItem">
           <h2>Product Category</h2>

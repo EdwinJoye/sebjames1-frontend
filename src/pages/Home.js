@@ -45,7 +45,7 @@ const Home = () => {
       </div>
 
       <Propositions></Propositions>
-      <FeaturedProducts type={"trending"}></FeaturedProducts>
+      <FeaturedProducts type={"available"}></FeaturedProducts>
       <FeaturedProducts type={"new"}></FeaturedProducts>
       <Test subCategories={"trending"}></Test>
     </div>

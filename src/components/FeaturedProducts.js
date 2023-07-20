@@ -16,15 +16,11 @@ const FeaturedProducts = ({ type }) => {
         <div className="featuredProducts__all-container">
           {data?.map((item) => {
             return (
-              <div key={item.id} className="test-1">
+              <div key={item.id}>
                 {item.attributes.img1.data.map((pic) => {
                   return (
-                    <div key={pic.id} className="child">
-                      <img
-                        className="child"
-                        src={pic.attributes.url}
-                        alt="pics"
-                      />
+                    <div key={pic.id}>
+                      <img src={pic.attributes.url} alt="pics" />
                     </div>
                   );
                 })}

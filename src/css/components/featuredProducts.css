@@ -3,11 +3,9 @@
   gap: 40px;
   background-color: red;
   margin-bottom: 20px;
+  overflow: scroll;
 }
-
-.test-1 {
-  width: 300px;
-}
-.child {
-  width: 100%;
+.featuredProducts__all-container img {
+  height: 250px;
+  background-color: pink;
 }
