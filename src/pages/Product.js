@@ -1,17 +1,30 @@
 import { useState } from "react";
 import useFetch from "../hooks/useFetch";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import Cart from "../img/icons/cart-white.png";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
+import ArrowBack from "../img/icons/arrowBack-black.png";
 import "../css/pages/product.css";
 
 const Product = () => {
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img1");
   const [quantity, setQuantity] = useState(1);
+  const location = useLocation();
+  const { referer } = location.state || { referer: "/" };
   const dispatch = useDispatch();
   const { data, loading } = useFetch(`/products/${id}?populate=*`);
+
+  const getGoBackLink = () => {
+    if (referer === "portfolio") {
+      return "/portfolio/:id";
+    } else if (referer === "shop") {
+      return "/shop/1";
+    }
+
+    return "/";
+  };
 
   return (
     <div className="product__all-container">
@@ -20,12 +33,22 @@ const Product = () => {
       ) : (
         <>
           <div className="product__left">
+            <Link to={getGoBackLink()}>
+              <img
+                className="product__img-arrowBack"
+                src={ArrowBack}
+                alt="arrowBack"
+              />
+            </Link>
+            {console.log("PRODUCT REFERER", referer)}
             <img
+              className="product__img-painting"
               src={data?.attributes?.img1?.data[0]?.attributes?.url}
               alt="img1"
               onClick={() => setSelectedImg("img1")}
             />
             <img
+              className="product__img-painting"
               src={data?.attributes?.img2?.data[0]?.attributes?.url}
               alt="img2"
               onClick={() => setSelectedImg("img2")}

@@ -1,7 +1,7 @@
 import useFetch from "../hooks/useFetch";
 import Card from "../components/Card.js";
 
-const List2 = ({ subCats, maxPrice, catId, sort }) => {
+const List2 = ({ subCats, maxPrice, catId, sort, goBack }) => {
   const { data, loading } = useFetch(
     `/products?populate=*&[filters][categories][id]=${catId}${subCats.map(
       (item) => `&[filters][sub_categories][id][$eq]=${item}`
@@ -24,6 +24,7 @@ const List2 = ({ subCats, maxPrice, catId, sort }) => {
                         <div className="portfolio__img-container" key={pic.id}>
                           <Card
                             id={item.id}
+                            goBack={goBack}
                             picture={pic.attributes.url}
                             title={item.attributes.title}
                             date={item.attributes.date}

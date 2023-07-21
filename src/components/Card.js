@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "../css/components/card.css";
 
-const Card = ({ picture, title, date, id }) => {
+const Card = ({ picture, title, date, id, goBack }) => {
   return (
-    <Link to={`/product/${id}`}>
+    <Link to={`/product/${id}`} state={{ referer: goBack }}>
+      {console.log("CARD GOBACK", goBack)}
       <div className="overlay__all-container">
         <div className="overlay__img-container">
-          <img src={picture} alt="engravings" />
+          <img src={picture} alt={`Shop Item ${id}`} />
         </div>
         <div className="overlay__container">
           <h3 className="overlay__title">{title}</h3>

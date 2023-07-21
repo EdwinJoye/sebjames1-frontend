@@ -14,9 +14,23 @@
   margin-top: 8%;
   /* background-color: red; */
 }
-.product__left img {
+.product__img-arrowBack {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.product__img-arrowBack:hover {
+  opacity: 0.5;
+}
+.product__img-painting {
   width: 100%;
   cursor: pointer;
+  border: 1px solid transparent;
+}
+.product__img-painting:hover {
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid black;
 }
 .product__center {
   display: flex;
@@ -73,6 +87,9 @@
   background-color: #2d84ff;
   border: none;
   cursor: pointer;
+}
+.product__add-button:hover {
+  background-color: rgba(45, 132, 255, 0.75);
 }
 .product__add-button img {
   width: 30px;

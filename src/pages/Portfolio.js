@@ -41,6 +41,7 @@ const Portfolio = () => {
                       <div className="portfolio__img-container" key={pic.id}>
                         <Card
                           id={item.id}
+                          goBack={"portfolio"}
                           picture={pic.attributes.url}
                           title={item.attributes.title}
                           date={item.attributes.date}

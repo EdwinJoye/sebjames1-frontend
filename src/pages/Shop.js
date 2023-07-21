@@ -97,6 +97,7 @@ const Shop = () => {
       </div>
       <div className="shop__right">
         <List2
+          goBack={"shop"}
           catId={catId}
           maxPrice={maxPrice}
           sort={sort}
