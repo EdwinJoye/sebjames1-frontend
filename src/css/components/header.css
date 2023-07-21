@@ -11,7 +11,7 @@
   height: 6rem;
   border-bottom: 1px solid black;
   transition: transform 0.5s ease;
-  background-color: white;
+  background-color: rgb(237, 236, 221);
 }
 .header--top {
   height: 9rem;

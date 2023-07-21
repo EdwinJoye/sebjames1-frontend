@@ -17,13 +17,10 @@ const FeaturedProducts = ({ type }) => {
           {data?.map((item) => {
             return (
               <div key={item.id}>
-                {item.attributes.img1.data.map((pic) => {
-                  return (
-                    <div key={pic.id}>
-                      <img src={pic.attributes.url} alt="pics" />
-                    </div>
-                  );
-                })}
+                <img
+                  src={item?.attributes?.img1?.data[0]?.attributes?.url}
+                  alt="pics"
+                />
               </div>
             );
           })}
