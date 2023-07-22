@@ -40,7 +40,6 @@ const Product = () => {
                 alt="arrowBack"
               />
             </Link>
-            {console.log("PRODUCT REFERER", referer)}
             <img
               className="product__img-painting"
               src={data?.attributes?.img1?.data[0]?.attributes?.url}

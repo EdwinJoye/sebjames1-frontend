@@ -35,20 +35,14 @@ const Portfolio = () => {
           <div>
             {data?.map((item) => {
               return (
-                <div key={item.id}>
-                  {item.attributes.img1.data.map((pic) => {
-                    return (
-                      <div className="portfolio__img-container" key={pic.id}>
-                        <Card
-                          id={item.id}
-                          goBack={"portfolio"}
-                          picture={pic.attributes.url}
-                          title={item.attributes.title}
-                          date={item.attributes.date}
-                        ></Card>
-                      </div>
-                    );
-                  })}
+                <div key={item.id} className="portfolio__img-container">
+                  <Card
+                    id={item?.attributes?.id}
+                    goBack={"portfolio"}
+                    picture={item?.attributes?.img1?.data[0]?.attributes?.url}
+                    title={item?.attributes?.title}
+                    date={item?.attributes?.date}
+                  ></Card>
                 </div>
               );
             })}

@@ -4,22 +4,10 @@ import ImgOverlay from "../components/ImgOverlay";
 import "../css/pages/portfolio.css";
 
 const Portfolio = () => {
-  const [data, setData] = useState([]);
+  const { data, loading, error } = useFetch(
+    `http://localhost:1337/api/upload/files?populate=*`
+  );
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "http://localhost:1337/api/upload/files?populate=*"
-      );
-      setData(response.data);
-    } catch (error) {
-      console.error("Error retrieving data:", error);
-    }
-  };
   return (
     <div className="portfolio__all-container container">
       <div className="test">

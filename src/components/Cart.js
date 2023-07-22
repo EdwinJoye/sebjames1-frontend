@@ -24,7 +24,6 @@ const Cart = ({ setOpen }) => {
       {products?.map((item) => {
         return (
           <div className="cart__img-infos-container" key={item.id}>
-            {}
             <img className="cart__img" src={item.img} alt="cartImg" />
             <div className="cart__infos-container">
               <div className="cart__title-icon-container">

@@ -1,38 +1,28 @@
 import "../css/components/featuredProducts.css";
-// import useFetch from "../hooks/useFetch";
+import useFetch from "../hooks/useFetch";
 
 const Test = () => {
-  //   const {} = useFetch(`/products?populate=*`);
-
+  const { data, loading, error } = useFetch(`/products?populate=*`);
   return (
     <div>
-      {/* {error ? (
+      {error ? (
         "Something wrong"
       ) : loading ? (
         "loading"
       ) : (
         <div className="featuredProducts__all-container">
-    
           {data?.map((item) => {
             return (
-              <div key={item.id} className="test-1">
-                {item.attributes.img1.data.map((pic) => {
-                  return (
-                    <div key={pic.id} className="child">
-                      <img
-                        className="child"
-                        src={pic.attributes.url}
-                        alt="pics"
-                      />
-                    </div>
-                  );
-                })}
+              <div key={item.id}>
+                <img
+                  src={item?.attributes?.img1?.data[0]?.attributes?.url}
+                  alt="pics"
+                />
               </div>
             );
           })}
         </div>
-      )} */}
-      hello
+      )}
     </div>
   );
 };

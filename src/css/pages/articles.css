@@ -1,0 +1,12 @@
+.articles__article-container {
+  gap: 20px;
+}
+.articles__articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* background-color: pink; */
+}
+.articles__article-container {
+  width: 30%;
+}

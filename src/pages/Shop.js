@@ -26,7 +26,6 @@ const Shop = () => {
   };
   return (
     <div className="container shop__all-container">
-      {console.log("SHOP catId", catId)}
       <div className="shop__left">
         <div className="shop__filterItem">
           <h2>Product Category</h2>
