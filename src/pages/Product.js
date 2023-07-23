@@ -54,10 +54,10 @@ const Product = () => {
             />
           </div>
           <div className="product__center">
-            {/* <img
+            <img
               src={data?.attributes[selectedImg]?.data[0]?.attributes?.url}
               alt="img"
-            /> */}
+            />
           </div>
           <div className="product__right">
             <h2>La pensée interne</h2>

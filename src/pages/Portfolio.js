@@ -36,8 +36,9 @@ const Portfolio = () => {
             {data?.map((item) => {
               return (
                 <div key={item.id} className="portfolio__img-container">
+                  {console.log("PORTFOLIO ID", item)}
                   <Card
-                    id={item?.attributes?.id}
+                    id={item?.id}
                     goBack={"portfolio"}
                     picture={item?.attributes?.img1?.data[0]?.attributes?.url}
                     title={item?.attributes?.title}
