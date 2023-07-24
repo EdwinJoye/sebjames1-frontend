@@ -1,47 +1,74 @@
 .article__all-container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 20px;
-  padding: 20px;
   margin-bottom: 20px;
-  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px;
   background-color: white;
 }
-.article__all-container h4 {
-  min-height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background-color: yellow; */
+.article__picture-large,
+.article__picture-tall {
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
 }
-.article__media-date {
+.article__picture-large {
+  aspect-ratio: 1 / 0.6;
+  background-color: yellow;
+}
+.article__picture-tall {
+  aspect-ratio: 1 / 0.8;
+  background-color: pink;
+}
+.article__picture-large img,
+.article__picture-tall img {
+  transition: transform 1s;
+  width: 100%;
+}
+.article__picture-large img:hover,
+.article__picture-tall img:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.article__media-date-txt-article {
+  padding: 20px;
+}
+.article__title {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 16px;
 }
 .article__media {
+  margin-top: 10px;
   text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
-.article__picture {
-  object-fit: contain;
-  height: 200px;
+.article__date {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 12px;
+  /* background-color: blue; */
 }
 .article__article {
-  height: 210px;
+  font-size: 14px;
+  max-height: 200px;
   overflow: hidden;
+  margin-bottom: 10px;
+  /* background-color: pink; */
 }
 .article__lireLaSuite {
   padding: 5px;
   margin: 0 auto;
   font-weight: bold;
   cursor: pointer;
-  width: 120px;
-  border: 1px solid black;
-  border-radius: 20px;
 }
 .article__lireLaSuite a {
   color: black;
 }
 .article__lireLaSuite a:hover {
-  opacity: 0.5;
+  color: #3c8cc4;
+  transition: 0.2s ease-in-out;
 }

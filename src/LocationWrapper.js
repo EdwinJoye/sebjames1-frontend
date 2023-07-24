@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Biography from "./pages/Biography";
 import Contact from "../src/pages/Contact";
 import Shop from "../src/pages/Shop";
 import Portfolio from "./pages/Portfolio";
@@ -14,7 +14,7 @@ function LocationWrapper() {
   return (
     <Routes>
       <Route path="/" element={<Home></Home>}></Route>
-      <Route path="/about" element={<About></About>}></Route>
+      <Route path="/biography" element={<Biography></Biography>}></Route>
       <Route path="/articles" element={<Articles></Articles>}></Route>
       <Route path="/contact" element={<Contact></Contact>}></Route>
       <Route path="/shop/:id" element={<Shop></Shop>}></Route>

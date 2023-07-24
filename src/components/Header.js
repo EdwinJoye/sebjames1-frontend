@@ -81,13 +81,45 @@ const Header = () => {
       </div>
       <div className="header__center-container">
         <div className="header__links-container-1">
-          <Link to="/about" onClick={() => setOpen(false)}>
-            <span className={isAbout ? "white" : ""}>ABOUT</span>
-          </Link>
-          <Link to="/portfolio/:id" onClick={() => setOpen(false)}>
+          <div className="header__dropdown">
+            <Link
+              className="header__span-container"
+              to="/biography"
+              onClick={() => setOpen(false)}
+            >
+              <span className={isAbout ? "white" : ""}>ABOUT</span>
+            </Link>
+            <div
+              className={
+                !atTop
+                  ? "header__dropdown-content header__border-white"
+                  : "header__dropdown-content header__border-black"
+              }
+            >
+              <Link to="/biography">
+                <div>
+                  <span>BIOGRAPHY</span>
+                </div>
+              </Link>
+              <Link to="/articles">
+                <div>
+                  <span>EXHIBITIONS</span>
+                </div>
+              </Link>
+            </div>
+          </div>
+          <Link
+            className="header__span-container"
+            to="/portfolio/:id"
+            onClick={() => setOpen(false)}
+          >
             <span className={isPortofolio ? "white" : ""}>PORTFOLIO</span>
           </Link>
-          <Link to="/articles" onClick={() => setOpen(false)}>
+          <Link
+            className="header__span-container"
+            to="/articles"
+            onClick={() => setOpen(false)}
+          >
             <span className={isArticles ? "white" : ""}>ARTICLES</span>
           </Link>
         </div>
@@ -106,13 +138,25 @@ const Header = () => {
           </Link>
         </div>
         <div className="header__links-container-2">
-          <Link to="/" onClick={() => setOpen(false)}>
+          <Link
+            className="header__span-container"
+            to="/"
+            onClick={() => setOpen(false)}
+          >
             <span className={isHome ? "black" : ""}>HOME</span>
           </Link>
-          <Link to="/contact" onClick={() => setOpen(false)}>
+          <Link
+            className="header__span-container"
+            to="/contact"
+            onClick={() => setOpen(false)}
+          >
             <span className={isContact ? "white" : ""}>CONTACT</span>
           </Link>
-          <Link to="/shop/:id" onClick={() => setOpen(false)}>
+          <Link
+            className="header__span-container"
+            to="/shop/:id"
+            onClick={() => setOpen(false)}
+          >
             <span className={isShop ? "white" : ""}>SHOP</span>
           </Link>
         </div>

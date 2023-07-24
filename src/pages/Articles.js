@@ -25,6 +25,7 @@ const Articles = () => {
                       link={item.attributes.link}
                       media={item.attributes.mediaName}
                       picture={pic.attributes.url}
+                      size={item.attributes.size}
                     ></Article>
                   );
                 })}
