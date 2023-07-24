@@ -53,12 +53,12 @@ const Product = () => {
               onClick={() => setSelectedImg("img2")}
             />
           </div>
-          <div className="product__center">
+          {/* <div className="product__center">
             <img
               src={data?.attributes[selectedImg]?.data[0]?.attributes?.url}
               alt="img"
             />
-          </div>
+          </div> */}
           <div className="product__right">
             <h2>La pensée interne</h2>
             <span>{data?.attributes?.price}$</span>

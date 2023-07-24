@@ -8,7 +8,7 @@ const Article = ({ title, article, media, picture, date, link, size }) => {
         <div
           className={
             size === "large"
-              ? " article__picture-large"
+              ? "article__picture-large"
               : "article__picture-tall"
           }
         >

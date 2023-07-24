@@ -32,12 +32,14 @@
   transform: scale(1.1);
 }
 .article__media-date-txt-article {
-  padding: 20px;
+  padding: 15px;
 }
 .article__title {
   display: flex;
   justify-content: center;
   font-size: 16px;
+  /* background-color: yellow; */
+  height: 60px;
 }
 .article__media {
   margin-top: 10px;
@@ -54,7 +56,7 @@
 }
 .article__article {
   font-size: 14px;
-  max-height: 200px;
+  height: 200px;
   overflow: hidden;
   margin-bottom: 10px;
   /* background-color: pink; */

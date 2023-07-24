@@ -1,0 +1,25 @@
+.interviews__all-container {
+  background-color: orange;
+  width: 100%;
+  display: flex;
+}
+.interviews__infos-container,
+.interviews__video-container {
+  flex: 1;
+  padding: 20px;
+}
+.interviews__infos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.interviews__date {
+  margin-bottom: 20px;
+}
+.interviews__button {
+  color: black;
+  text-align: right;
+}
+.interviews__video {
+  width: 100%;
+}

@@ -101,9 +101,14 @@ const Header = () => {
                   <span>BIOGRAPHY</span>
                 </div>
               </Link>
-              <Link to="/articles">
+              <Link to="/exhibitions">
                 <div>
                   <span>EXHIBITIONS</span>
+                </div>
+              </Link>
+              <Link to="/interviews">
+                <div>
+                  <span>INTERVIEWS</span>
                 </div>
               </Link>
             </div>
