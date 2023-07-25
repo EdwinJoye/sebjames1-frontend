@@ -63,7 +63,10 @@ const Header = () => {
         >
           <img src={Facebook} alt="fb" />
         </a>
-        <a className={!atTop ? "black-png" : ""} href="http://hello.com">
+        <a
+          className={!atTop ? "black-png" : ""}
+          href="https://www.pinterest.fr/sebj19/"
+        >
           <img src={Pinterest} alt="pint" />
         </a>
         <a

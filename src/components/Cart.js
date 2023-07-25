@@ -1,6 +1,7 @@
 import React from "react";
 import DeleteIcon from "../img/icons/delete-red.png";
 import CloseIcon from "../img/icons/close-black.png";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { removeItem, resetCart } from "../redux/cartReducer";
@@ -50,7 +51,9 @@ const Cart = ({ setOpen }) => {
           <span>SUBTOTAL</span>
           <span>{totalPrice()}€</span>
         </div>
-        <button className="cart__checkout-button">PROCEED TO CHECKOUT</button>
+        <Link to="/checkout">
+          <button className="cart__checkout-button">PROCEED TO CHECKOUT</button>
+        </Link>
         <span className="cart__reset" onClick={() => dispatch(resetCart())}>
           Reset Cart
         </span>

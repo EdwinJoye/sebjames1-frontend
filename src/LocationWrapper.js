@@ -8,6 +8,7 @@ import Articles from "../src/pages/Articles";
 import Exhibition from "../src/pages/Exhibition";
 import Interviews from "./pages/Interviews";
 import Product from "./pages/Product";
+import Checkout from "./pages/Checkout";
 import Test from "../src/Test";
 
 function LocationWrapper() {
@@ -24,6 +25,7 @@ function LocationWrapper() {
       <Route path="/shop/:id" element={<Shop></Shop>}></Route>
       <Route path="/portfolio/:id" element={<Portfolio></Portfolio>}></Route>
       <Route path="/product/:id" element={<Product></Product>}></Route>
+      <Route path="/checkout" element={<Checkout></Checkout>}></Route>
       <Route path="/test" element={<Test></Test>}></Route>
     </Routes>
   );
