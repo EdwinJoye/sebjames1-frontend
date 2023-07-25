@@ -1,6 +1,6 @@
 .overlay__all-container {
   position: relative;
-  background-color: yellow;
+  /* background-color: yellow; */
   margin-bottom: 10px;
   margin-right: 0;
 }

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Facebook from "../img/icons/facebook-white.png";
@@ -22,6 +23,7 @@ const Header = () => {
   const isContact = location.pathname === "/contact";
   const isShop = location.pathname === "/shop/:id";
   const products = useSelector((state) => state.cart.products);
+  const categories = useFetch(`/categories?populate=*`);
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -109,6 +111,11 @@ const Header = () => {
                   <span>EXHIBITIONS</span>
                 </div>
               </Link>
+              <Link to="/articles">
+                <div>
+                  <span>ARTICLES</span>
+                </div>
+              </Link>
               <Link to="/interviews">
                 <div>
                   <span>INTERVIEWS</span>
@@ -116,20 +123,59 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <Link
-            className="header__span-container"
-            to="/portfolio/:id"
-            onClick={() => setOpen(false)}
-          >
-            <span className={isPortofolio ? "white" : ""}>PORTFOLIO</span>
-          </Link>
-          <Link
-            className="header__span-container"
-            to="/articles"
-            onClick={() => setOpen(false)}
-          >
-            <span className={isArticles ? "white" : ""}>ARTICLES</span>
-          </Link>
+          <div className="header__dropdown">
+            <Link
+              className="header__span-container"
+              to="/portfolio/:id"
+              onClick={() => setOpen(false)}
+            >
+              <span className={isPortofolio ? "white" : ""}>PORTFOLIO</span>
+            </Link>
+            <div
+              className={
+                !atTop
+                  ? "header__dropdown-content header__border-white"
+                  : "header__dropdown-content header__border-black"
+              }
+            >
+              {categories?.data?.map((item) => {
+                return (
+                  <Link to="/portfolio/:id" categoryId={item.id}>
+                    <div>
+                      <span>{item.attributes.title}</span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+          <div className="header__dropdown">
+            <Link
+              className="header__span-container"
+              to="/works"
+              onClick={() => setOpen(false)}
+            >
+              <span className={isArticles ? "white" : ""}>FRESCOE</span>
+            </Link>
+            <div
+              className={
+                !atTop
+                  ? "header__dropdown-content header__border-white"
+                  : "header__dropdown-content header__border-black"
+              }
+            >
+              <Link to="/works">
+                <div>
+                  <span>WORKS</span>
+                </div>
+              </Link>
+              <Link to="/estimate">
+                <div>
+                  <span>ESTIMATE</span>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
         <div className="header__signature-container">
           <Link to="/" onClick={() => setOpen(false)}>

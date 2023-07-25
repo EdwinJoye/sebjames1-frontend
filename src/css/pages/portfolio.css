@@ -31,14 +31,10 @@
 }
 .portfolio__imgs-container {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  align-content: space-between;
-  height: 7000px;
-  gap: 10px;
-  align-items: sp;
+  gap: 20px;
   /* background-color: yellowgreen; */
 }
 .portfolio__img-container {
-  width: 23%;
+  width: 400px;
 }

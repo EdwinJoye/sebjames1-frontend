@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-import List2 from "../components/List2";
+import List from "../components/List";
 import "../css/pages/shop.css";
 
 const Shop = () => {
@@ -95,13 +95,13 @@ const Shop = () => {
         </div>
       </div>
       <div className="shop__right">
-        <List2
+        <List
           goBack={"shop"}
           catId={catId}
           maxPrice={maxPrice}
           sort={sort}
           subCats={selectedSubCats}
-        ></List2>
+        ></List>
       </div>
     </div>
   );

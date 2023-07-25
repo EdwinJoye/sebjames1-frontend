@@ -5,7 +5,6 @@ import Card from "../components/Card";
 import "../css/pages/portfolio.css";
 
 const Portfolio = () => {
-  //
   const [categoryId, setCategoryId] = useState(null);
   const categories = useFetch(`/categories?populate=*`);
   const category = useFetch(
@@ -18,7 +17,6 @@ const Portfolio = () => {
 
   return (
     <div className="container fadeIn">
-      {console.log("PORTFOLIO CATEGORYID", categoryId)}
       <div className="portfolio__menu-container">
         <div className="portfolio__menu-left">
           <span>see all</span>
@@ -26,28 +24,27 @@ const Portfolio = () => {
         <div className="portfolio__menu-right">
           {categories?.data?.map((item) => {
             return (
-              <button key={item.id} onClick={() => handleItemClick(item.id)}>
+              <div key={item.id} onClick={() => handleItemClick(item.id)}>
                 <span>{item.attributes.title}</span>
-              </button>
+              </div>
             );
           })}
         </div>
       </div>
       <div className="portfolio__imgs-container">
-        <div>
-          {category?.data?.attributes?.products?.data?.map((item) => {
-            return (
+        {category?.data?.attributes?.products?.data?.map((item) => {
+          return (
+            <div key={item.id} className="portfolio__img-container">
               <Card
-                key={item.id}
                 id={item?.id}
                 goBack={"portfolio"}
                 picture={item?.attributes?.img1?.data[0]?.attributes?.url}
                 title={item?.attributes?.title}
                 date={item?.attributes?.date}
               ></Card>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

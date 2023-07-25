@@ -1,5 +1,5 @@
 const Biography = () => {
-  return <div className="container">Biography</div>;
+  return <div className="container fadeIn">BIOGRAPHY</div>;
 };
 
 export default Biography;

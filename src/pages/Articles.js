@@ -5,7 +5,7 @@ import "../css/pages/articles.css";
 const Articles = () => {
   const { data, loading, error } = useFetch(`/ars?populate=*`);
   return (
-    <div className="container">
+    <div className="container fadeIn">
       {error ? (
         "Something wrong"
       ) : loading ? (
