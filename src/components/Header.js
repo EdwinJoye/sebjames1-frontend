@@ -60,27 +60,36 @@ const Header = () => {
     >
       <div className="header__left-container">
         <a
-          className={!atTop ? "black-png" : ""}
+          // className={!atTop ? "black-png" : ""}
+
           href="https://www.facebook.com/seb.james.98"
         >
           <img src={Facebook} alt="fb" />
         </a>
         <a
-          className={!atTop ? "black-png" : ""}
+          // className={!atTop ? "black-png" : ""}
+
           href="https://www.pinterest.fr/sebj19/"
         >
           <img src={Pinterest} alt="pint" />
         </a>
         <a
-          className={!atTop ? "black-png" : ""}
+          // className={!atTop ? "black-png" : ""}
+
           href="https://www.instagram.com/sebjamesart/"
         >
           <img src={Instagram} alt="ins" />
         </a>
-        <a className={!atTop ? "black-png" : ""} href="http://hello.com">
+        <a
+          // className={!atTop ? "black-png" : ""}
+          href="http://hello.com"
+        >
           <img src={LinkedIn} alt="link" />
         </a>
-        <a className={!atTop ? "black-png" : ""} href="mailto:sebj19@gmail.com">
+        <a
+          // className={!atTop ? "black-png" : ""}
+          href="mailto:sebj19@gmail.com"
+        >
           <img src={Send} alt="send" />
         </a>
       </div>
@@ -162,7 +171,8 @@ const Header = () => {
         <div className="header__signature-container">
           <Link to="/" onClick={() => setOpen(false)}>
             <img
-              className={!atTop ? "black-png" : ""}
+              // className={!atTop ? "black-png" : ""}
+
               src={Signature}
               alt="sign"
             />
@@ -212,11 +222,18 @@ const Header = () => {
         </div>
       </div>
       <div className="header__right-container">
-        <a className={!atTop ? "black-png" : ""} href="http://hello.com">
+        <a
+          // className={!atTop ? "black-png" : ""}
+          href="http://hello.com"
+        >
           <img src={Loupe} alt="loupe" />
         </a>
         <div className="cartIcon" onClick={() => setOpen(!open)}>
-          <img className={!atTop ? "black-png" : ""} src={Bag} alt="bag" />
+          <img
+            // className={!atTop ? "black-png" : ""}
+            src={Bag}
+            alt="bag"
+          />
           <span>{totalQuantity()}</span>
         </div>
       </div>

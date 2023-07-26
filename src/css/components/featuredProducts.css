@@ -1,7 +1,7 @@
 .featuredProducts__all-container {
   display: flex;
   gap: 40px;
-  background-color: red;
+  /* background-color: red; */
   margin-bottom: 20px;
   overflow: scroll;
 }

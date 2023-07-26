@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-color: black;
+  /* background-color: black; */
   padding: 60px 0 120px 0;
 }
 .propositions__title-img-container {
