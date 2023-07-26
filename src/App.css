@@ -29,6 +29,14 @@ img {
 .absolute {
   position: absolute;
 }
+.fixed {
+  position: fixed;
+}
+.sticky {
+  top: 0;
+  left: 0;
+  position: sticky;
+}
 .fadeIn {
   animation: 2s ease fadeIn;
 }
