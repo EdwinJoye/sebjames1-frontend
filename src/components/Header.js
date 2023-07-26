@@ -7,7 +7,8 @@ import Pinterest from "../img/icons/pinterest-white.png";
 import Instagram from "../img/icons/instagram-white.png";
 import LinkedIn from "../img/icons/linkedIn-white.png";
 import Send from "../img/icons/send-white.png";
-import Signature from "../img/signatures/signature-white.png";
+import SignatureBlack from "../img/signatures/signature-black.png";
+import SignatureWhite from "../img/signatures/signature-white.png";
 import Loupe from "../img/icons/loupe-white.png";
 import Bag from "../img/icons/bag-white.png";
 import Cart from "./Cart";
@@ -54,42 +55,24 @@ const Header = () => {
 
   return (
     <div
-      className={` ${visible ? "header--visible" : "header--hidden"} ${
-        atTop ? "header--top" : "header__all-container"
-      }`}
+      className={`${visible ? "header--visible" : "header--hidden"} ${
+        atTop ? "header__top" : "header__all-container"
+      } ${isHome ? "header__home" : "header__else"}`}
     >
       <div className="header__left-container">
-        <a
-          // className={!atTop ? "black-png" : ""}
-
-          href="https://www.facebook.com/seb.james.98"
-        >
+        <a href="https://www.facebook.com/seb.james.98">
           <img src={Facebook} alt="fb" />
         </a>
-        <a
-          // className={!atTop ? "black-png" : ""}
-
-          href="https://www.pinterest.fr/sebj19/"
-        >
+        <a href="https://www.pinterest.fr/sebj19/">
           <img src={Pinterest} alt="pint" />
         </a>
-        <a
-          // className={!atTop ? "black-png" : ""}
-
-          href="https://www.instagram.com/sebjamesart/"
-        >
+        <a href="https://www.instagram.com/sebjamesart/">
           <img src={Instagram} alt="ins" />
         </a>
-        <a
-          // className={!atTop ? "black-png" : ""}
-          href="http://hello.com"
-        >
+        <a href="http://hello.com">
           <img src={LinkedIn} alt="link" />
         </a>
-        <a
-          // className={!atTop ? "black-png" : ""}
-          href="mailto:sebj19@gmail.com"
-        >
+        <a href="mailto:sebj19@gmail.com">
           <img src={Send} alt="send" />
         </a>
       </div>
@@ -171,9 +154,13 @@ const Header = () => {
         <div className="header__signature-container">
           <Link to="/" onClick={() => setOpen(false)}>
             <img
-              // className={!atTop ? "black-png" : ""}
-
-              src={Signature}
+              className={isHome ? "none" : ""}
+              src={SignatureBlack}
+              alt="sign"
+            />
+            <img
+              className={isHome ? "" : "none"}
+              src={SignatureWhite}
               alt="sign"
             />
             <div className="header__text-line-container">
@@ -222,18 +209,11 @@ const Header = () => {
         </div>
       </div>
       <div className="header__right-container">
-        <a
-          // className={!atTop ? "black-png" : ""}
-          href="http://hello.com"
-        >
+        <a href="http://hello.com">
           <img src={Loupe} alt="loupe" />
         </a>
         <div className="cartIcon" onClick={() => setOpen(!open)}>
-          <img
-            // className={!atTop ? "black-png" : ""}
-            src={Bag}
-            alt="bag"
-          />
+          <img src={Bag} alt="bag" />
           <span>{totalQuantity()}</span>
         </div>
       </div>
