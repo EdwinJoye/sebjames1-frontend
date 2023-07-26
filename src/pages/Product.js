@@ -63,7 +63,7 @@ const Product = () => {
               </div>
             )}
             <div className="product__right">
-              <h2>{data.attributes.title}</h2>
+              <h2>{data?.attributes?.title}</h2>
               <span>{data?.attributes?.price}$</span>
               <p>
                 Painting by

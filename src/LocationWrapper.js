@@ -12,6 +12,7 @@ import Interviews from "./pages/Interviews";
 import Product from "./pages/Product";
 import Checkout from "./pages/Checkout";
 import Test from "../src/Test";
+import HomeTest from "../src/pages/Home-Test";
 
 function LocationWrapper() {
   return (
@@ -29,6 +30,7 @@ function LocationWrapper() {
       <Route path="/product/:id" element={<Product></Product>}></Route>
       <Route path="/checkout" element={<Checkout></Checkout>}></Route>
       <Route path="/test" element={<Test></Test>}></Route>
+      <Route path="/hometest" element={<HomeTest></HomeTest>}></Route>
     </Routes>
   );
 }

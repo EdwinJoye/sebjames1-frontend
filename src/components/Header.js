@@ -94,13 +94,7 @@ const Header = () => {
             >
               <span className={isAbout ? "white" : ""}>ABOUT</span>
             </Link>
-            <div
-              className={
-                !atTop
-                  ? "header__dropdown-content header__border-white"
-                  : "header__dropdown-content header__border-black"
-              }
-            >
+            <div className="header__dropdown-content">
               <Link to="/biography">
                 <div>
                   <span>BIOGRAPHY</span>
@@ -131,13 +125,7 @@ const Header = () => {
             >
               <span className={isPortofolio ? "white" : ""}>PORTFOLIO</span>
             </Link>
-            <div
-              className={
-                !atTop
-                  ? "header__dropdown-content header__border-white"
-                  : "header__dropdown-content header__border-black"
-              }
-            >
+            <div className="header__dropdown-content">
               {categories?.data?.map((item) => {
                 return (
                   <Link to="/portfolio/:id" categoryId={item.id}>
@@ -157,13 +145,7 @@ const Header = () => {
             >
               <span className={isArticles ? "white" : ""}>FRESCOE</span>
             </Link>
-            <div
-              className={
-                !atTop
-                  ? "header__dropdown-content header__border-white"
-                  : "header__dropdown-content header__border-black"
-              }
-            >
+            <div className="header__dropdown-content">
               <Link to="/works">
                 <div>
                   <span>WORKS</span>
@@ -206,16 +188,29 @@ const Header = () => {
           >
             <span className={isContact ? "white" : ""}>CONTACT</span>
           </Link>
-          <Link
-            className="header__span-container"
-            to="/shop/:id"
-            onClick={() => setOpen(false)}
-          >
-            <span className={isShop ? "white" : ""}>SHOP</span>
-          </Link>
+          <div className="header__dropdown">
+            <Link
+              className="header__span-container"
+              to="/shop/:id"
+              onClick={() => setOpen(false)}
+            >
+              <span className={isShop ? "white" : ""}>SHOP</span>
+            </Link>
+            <div className="header__dropdown-content">
+              <Link to="/shop/:id">
+                <div>
+                  <span>ITEMS</span>
+                </div>
+              </Link>
+              <Link to="/chekout">
+                <div>
+                  <span>CHECKOUT</span>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-
       <div className="header__right-container">
         <a className={!atTop ? "black-png" : ""} href="http://hello.com">
           <img src={Loupe} alt="loupe" />

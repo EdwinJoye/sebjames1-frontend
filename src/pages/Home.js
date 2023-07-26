@@ -40,10 +40,7 @@ const Home = () => {
           )}
         </div>
       )}
-      <div className="home__slider-container">
-        <Slider picsUrl={picsUrl}></Slider>
-      </div>
-
+      <Slider picsUrl={picsUrl}></Slider>
       <Propositions></Propositions>
       <FeaturedProducts type={"available"}></FeaturedProducts>
       <FeaturedProducts type={"new"}></FeaturedProducts>

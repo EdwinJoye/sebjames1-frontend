@@ -1,7 +1,7 @@
 body {
   --def: #090e0c;
   --inv: #fff;
-  background-color: rgb(237, 236, 221);
+  /* background-color: rgb(237, 236, 221); */
 }
 * {
   box-sizing: border-box;

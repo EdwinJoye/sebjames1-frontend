@@ -20,6 +20,9 @@
   color: black;
   text-align: right;
 }
+.interviews__button:hover {
+  opacity: 0.5;
+}
 .interviews__video {
   width: 100%;
 }

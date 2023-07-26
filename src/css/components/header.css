@@ -11,7 +11,7 @@
   height: 6rem;
   border-bottom: 1px solid black;
   transition: transform 0.5s ease;
-  background-color: rgb(237, 236, 221);
+  backdrop-filter: blur(10px);
 }
 .header--top {
   height: 9rem;
@@ -168,6 +168,9 @@
   display: none;
   flex-direction: column;
   text-align: left;
+  padding: 10px;
+  padding-right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .header__all-container .header__dropdown-content {
   border-top: 1px black solid;
@@ -180,7 +183,6 @@
 }
 .header__dropdown-content div {
   padding: 7px 5px;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 .header__span-container {
   display: flex;

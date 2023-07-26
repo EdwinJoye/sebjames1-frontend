@@ -25,7 +25,7 @@ const Shop = () => {
     );
   };
   return (
-    <div className="container shop__all-container">
+    <div className="container shop__all-container fadeIn">
       <div className="shop__left">
         <div className="shop__filterItem">
           <h2>Product Category</h2>
