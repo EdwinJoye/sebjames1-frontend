@@ -4,6 +4,7 @@
   /* background-color: red; */
   margin-bottom: 20px;
   overflow: scroll;
+  padding: 6rem 4rem;
 }
 .featuredProducts__all-container img {
   height: 250px;
