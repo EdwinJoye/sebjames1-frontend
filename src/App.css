@@ -1,6 +1,7 @@
 body {
   --def: #090e0c;
   --inv: #fff;
+  overscroll-behavior-y: contain;
   /* background-color: rgb(237, 236, 221); */
   /* background-color: #090e0c; */
 }

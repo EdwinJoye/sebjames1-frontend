@@ -7,28 +7,28 @@ import "../css/pages/home.css";
 
 const Home = () => {
   const [scrollOpacity, setScrollOpacity] = useState(0);
-  const [isSticky, setIsSticky] = useState(true);
+  // const [isSticky, setIsSticky] = useState(true);
 
-  const handleScrollSticky = () => {
-    const scrollHeight = window.innerHeight * 1.2;
+  // const handleScrollSticky = () => {
+  //   const scrollHeight = window.innerHeight * 1.2;
 
-    if (window.scrollY >= scrollHeight) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
-  };
-  const handleScroll = () => {
+  //   if (window.scrollY >= scrollHeight) {
+  //     setIsSticky(true);
+  //   } else {
+  //     setIsSticky(false);
+  //   }
+  // };
+  const handleScrollOpacity = () => {
     const scrollY = window.scrollY;
-    const maxScroll = 1400;
+    const maxScroll = 1000;
     const opacity = scrollY / maxScroll;
     setScrollOpacity(opacity);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, handleScrollSticky);
+    window.addEventListener("scroll", handleScrollOpacity);
     return () => {
-      window.removeEventListener("scroll", handleScroll, handleScrollSticky);
+      window.removeEventListener("scroll", handleScrollOpacity);
     };
   }, []);
 
@@ -43,23 +43,26 @@ const Home = () => {
       className="home__all-container fadeIn"
       style={{ backgroundColor: getBackgroundColor() }}
     >
-      <div className={`home__img-bg ${isSticky ? "sticky" : "fixed"}`}>
+      <div className={`home__img-bg fixed`}>
+        {/* ${isSticky ? "sticky" : "fixed"} */}
         <img
           className="home__img"
-          src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1690366008/sebjames/screen_1_e0bf17cd53.jpg"
-          alt=""
+          src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1690450553/sebjames/screen_1_08d919b796.jpg"
+          alt="homeBg"
         />
       </div>
       <div className="home__content-container">
         <div className="home__top-container">
           <div className="home__title">
-            <div>
+            <div className="home__title-1">
               <span>Welcome in the</span>
             </div>
-            <div className="home__title-secondPart">
-              <h1>WORLD</h1> <span>of</span>
+            <div className="home__title-2">
+              <div className="home__title-3">
+                <h1>WORLD</h1> <span>of</span>
+              </div>
+              <h1>SEB JAMES</h1>
             </div>
-            <h1>SEB JAMES</h1>
           </div>
         </div>
         <div>

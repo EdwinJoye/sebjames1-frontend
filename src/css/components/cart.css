@@ -3,7 +3,8 @@
   position: absolute;
   right: 0;
   z-index: 999;
-  background-color: rgb(237, 236, 221);
+  /* background-color: rgb(237, 236, 221); */
+  background-color: white;
   padding: 20px;
   border: 1px solid white;
 }

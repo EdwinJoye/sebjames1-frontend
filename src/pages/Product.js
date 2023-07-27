@@ -27,7 +27,7 @@ const Product = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container fadeIn">
       {loading ? (
         "loading"
       ) : (

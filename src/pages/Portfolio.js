@@ -34,7 +34,7 @@ const Portfolio = () => {
       <div className="portfolio__imgs-container">
         {category?.data?.attributes?.products?.data?.map((item) => {
           return (
-            <div key={item.id} className="portfolio__img-container">
+            <div key={item.id} className="portfolio__img-container fadeIn">
               <Card
                 id={item?.id}
                 goBack={"portfolio"}
