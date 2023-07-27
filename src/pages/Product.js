@@ -20,11 +20,10 @@ const Product = () => {
 
   const getGoBackLink = () => {
     if (referer === "portfolio") {
-      return "/portfolio/:id";
+      return `/portfolio/:id`;
     } else if (referer === "shop") {
       return "/shop/1";
     }
-
     return "/";
   };
 
@@ -45,20 +44,26 @@ const Product = () => {
               </Link>
             </div>
             <div className="product__all-container">
-              <div className="product__left">
-                <img
-                  className="product__img-painting"
-                  src={data?.attributes?.img1?.data[0]?.attributes?.url}
-                  alt="img1"
-                  onClick={() => setSelectedImg("img1")}
-                />
-                <img
-                  className="product__img-painting"
-                  src={data?.attributes?.img2?.data[0]?.attributes?.url}
-                  alt="img2"
-                  onClick={() => setSelectedImg("img2")}
-                />
-              </div>
+              {data?.attributes && (
+                <div className="product__left">
+                  {data?.attributes && (
+                    <img
+                      className="product__img-painting"
+                      src={data?.attributes?.img1?.data[0]?.attributes?.url}
+                      alt="img1"
+                      onClick={() => setSelectedImg("img1")}
+                    />
+                  )}
+                  {/* {data?.attributes && (
+                    <img
+                      className="product__img-painting"
+                      src={data?.attributes?.img2?.data[0]?.attributes?.url}
+                      alt="img2"
+                      onClick={() => setSelectedImg("img2")}
+                    />
+                  )} */}
+                </div>
+              )}
               {data?.attributes && (
                 <div className="product__center">
                   <img
@@ -71,7 +76,6 @@ const Product = () => {
                     }
                     alt="img"
                   />
-                  {console.log("PRODUCT OPEN", open)}
                 </div>
               )}
               <div className="product__right">

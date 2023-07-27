@@ -18,11 +18,17 @@ import "../css/components/header.css";
 const Header = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const isAbout = location.pathname === "/about";
-  const isPortofolio = location.pathname === "/portfolio";
+  const isByographie = location.pathname === "/biography";
+  const isExhibition = location.pathname === "/exhibitions";
   const isArticles = location.pathname === "/articles";
+  const isInterviews = location.pathname === "/interviews";
+  const isPortofolio = location.pathname === "/portfolio/:id";
+  const isWorks = location.pathname === "/works";
+  const isEstimate = location.pathname === "/estimate";
   const isContact = location.pathname === "/contact";
   const isShop = location.pathname === "/shop/:id";
+  const isCheckout = location.pathname === "/checkout";
+
   const products = useSelector((state) => state.cart.products);
   const categories = useFetch(`/categories?populate=*`);
 
@@ -69,7 +75,7 @@ const Header = () => {
         <a href="https://www.instagram.com/sebjamesart/">
           <img src={Instagram} alt="ins" />
         </a>
-        <a href="http://hello.com">
+        <a href="https://www.linkedin.com/in/s%C3%A9bastien-james-8a675992/">
           <img src={LinkedIn} alt="link" />
         </a>
         <a href="mailto:sebj19@gmail.com">
@@ -84,7 +90,14 @@ const Header = () => {
               to="/biography"
               onClick={() => setOpen(false)}
             >
-              <span className={isAbout ? "white" : ""}>ABOUT</span>
+              <span>ABOUT</span>
+              <div
+                className={`header__underline ${
+                  isExhibition ? "opacityOn" : ""
+                } ${isArticles ? "opacityOn" : ""} ${
+                  isByographie ? "opacityOn" : ""
+                } ${isInterviews ? "opacityOn" : ""}`}
+              ></div>
             </Link>
             <div className="header__dropdown-content">
               <Link to="/biography">
@@ -115,7 +128,12 @@ const Header = () => {
               to="/portfolio/:id"
               onClick={() => setOpen(false)}
             >
-              <span className={isPortofolio ? "white" : ""}>PORTFOLIO</span>
+              <span>PORTFOLIO</span>
+              <div
+                className={`header__underline ${
+                  isPortofolio ? "opacityOn" : ""
+                }`}
+              ></div>
             </Link>
             <div className="header__dropdown-content">
               {categories?.data?.map((item) => {
@@ -135,7 +153,12 @@ const Header = () => {
               to="/works"
               onClick={() => setOpen(false)}
             >
-              <span className={isArticles ? "white" : ""}>FRESCOE</span>
+              <span>FRESCOE</span>
+              <div
+                className={`header__underline ${isWorks ? "opacityOn" : ""} ${
+                  isEstimate ? "opacityOn" : ""
+                }`}
+              ></div>
             </Link>
             <div className="header__dropdown-content">
               <Link to="/works">
@@ -176,14 +199,17 @@ const Header = () => {
             to="/"
             onClick={() => setOpen(false)}
           >
-            <span className={isHome ? "black" : ""}>HOME</span>
+            <span>HOME</span>
           </Link>
           <Link
             className="header__span-container"
             to="/contact"
             onClick={() => setOpen(false)}
           >
-            <span className={isContact ? "white" : ""}>CONTACT</span>
+            <span>CONTACT</span>
+            <div
+              className={`header__underline ${isContact ? "opacityOn" : ""}`}
+            ></div>
           </Link>
           <div className="header__dropdown">
             <Link
@@ -191,7 +217,12 @@ const Header = () => {
               to="/shop/:id"
               onClick={() => setOpen(false)}
             >
-              <span className={isShop ? "white" : ""}>SHOP</span>
+              <span>SHOP</span>
+              <div
+                className={`header__underline ${isShop ? "opacityOn" : ""} ${
+                  isCheckout ? "opacityOn" : ""
+                }`}
+              ></div>
             </Link>
             <div className="header__dropdown-content">
               <Link to="/shop/:id">
@@ -199,7 +230,7 @@ const Header = () => {
                   <span>ITEMS</span>
                 </div>
               </Link>
-              <Link to="/chekout">
+              <Link to="/checkout">
                 <div>
                   <span>CHECKOUT</span>
                 </div>

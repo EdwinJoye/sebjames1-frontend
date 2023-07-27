@@ -145,6 +145,12 @@
   opacity: 0.5;
   transition: 0.1s ease-out;
 }
+.header__underline {
+  opacity: 0;
+  width: 75%;
+  height: 1.5px;
+  background-color: black;
+}
 .cartIcon {
   position: relative;
 }
@@ -196,6 +202,8 @@
 .header__span-container {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   /* background-color: pink; */
 }

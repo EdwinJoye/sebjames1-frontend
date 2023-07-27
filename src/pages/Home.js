@@ -69,14 +69,13 @@ const Home = () => {
           </div>
           <div className="home__texte-container">
             <div className="home__texte-1">
-              Seb James est un artiste multiple facette <br />
+              Seb James est un artiste aux multiples facettes <br />
               qui exerçe son métier avec passion depuis <br />
               l'enfance. Aquarelliste, illustrateur, <br />
             </div>
             <div className="home__texte-2">
-              peintre ou graveur, son univers est <br />
-              essentiellement urbain, parfois <br />
-              classique, souvent fantaisiste, <br />
+              peintre ou graveur, son univers est essentiellement <br />
+              urbain, parfois classique, souvent fantaisiste, <br />
               intriguant, voire psychédélique...
               <br />
             </div>

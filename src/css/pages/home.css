@@ -1,4 +1,5 @@
 .home__all-container {
+  padding-bottom: 10rem;
 }
 .home__img-bg {
   width: 100%;
@@ -30,17 +31,17 @@
 }
 
 .home__title-1 {
-  animation: 6.5s ease-out SlideInFromLeftFurther;
+  animation: 5s ease-out SlideInFromLeftFurther;
   margin-bottom: 20px;
 }
 .home__title-2 {
   display: flex;
   align-items: baseline;
-  animation: 5s ease-out OuterLeft;
+  animation: 4s ease-out OuterLeft;
   margin-bottom: 25px;
 }
 .home__title-3 {
-  animation: 3s ease-out OuterLeft;
+  animation: 2s ease-out OuterLeft;
   margin-bottom: 25px;
 }
 .home__title-3 div {
@@ -64,20 +65,20 @@
   color: white;
   font-size: 30px;
   text-transform: uppercase;
+  font-weight: 400;
   animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
   padding-bottom: 15px;
 }
 .home__texte-1 {
   text-align: right;
   animation: inner-left 1s 1s ease both,
-    text-clip 4s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
-  animation-delay: 4.5s;
+    text-clip 3s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+  animation-delay: 4s;
 }
 .home__texte-2 {
-  text-align: left;
-  margin-right: 10rem;
-  animation: text-clip 5s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
-  animation-delay: 4s;
+  text-align: right;
+  animation: text-clip 3s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+  animation-delay: 3.5s;
 }
 
 @keyframes SlideInFromLeftFurther {

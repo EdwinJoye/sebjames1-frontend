@@ -16,10 +16,13 @@ img {
   display: block;
 }
 .block {
-  display: block;
+  display: block !important;
 }
 .none {
   display: none;
+}
+.opacityOn {
+  opacity: 1 !important;
 }
 .flex {
   display: flex;
