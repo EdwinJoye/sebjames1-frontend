@@ -4,7 +4,7 @@ import "../css/pages/interviews.css";
 const Interviews = () => {
   const { data } = useFetch(`/interviews?populate=*`);
   return (
-    <div className="container">
+    <div className="container fadeIn">
       {data?.map((item) => {
         return (
           <div className="interviews__all-container" key={item.id}>

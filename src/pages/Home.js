@@ -20,7 +20,7 @@ const Home = () => {
   // };
   const handleScrollOpacity = () => {
     const scrollY = window.scrollY;
-    const maxScroll = 1000;
+    const maxScroll = 800;
     const opacity = scrollY / maxScroll;
     setScrollOpacity(opacity);
   };
@@ -58,21 +58,28 @@ const Home = () => {
               <span>Welcome in the</span>
             </div>
             <div className="home__title-2">
-              <div className="home__title-3">
-                <h1>WORLD</h1> <span>of</span>
+              <h1>WORLD</h1>
+              <div>
+                <span>of</span>
               </div>
+            </div>
+            <div className="home__title-3">
               <h1>SEB JAMES</h1>
             </div>
           </div>
-          <div className="home__texte">
-            James est un artiste multiple facette <br />
-            exerçe son métier avec passion depuis l'enfance. <br />
-            à titre provisoire pour calibrer une mise <br />
-            en page, le texte définitif venant remplacer <br />
-            le faux-texte dès qu'il est prêt ou que <br />
-            la mise en page est achevée. Généralement, <br />
-            on utilise un texte en faux latin,le <br />
-            Lorem ipsum ou Lipsum
+          <div className="home__texte-container">
+            <div className="home__texte-1">
+              Seb James est un artiste multiple facette <br />
+              qui exerçe son métier avec passion depuis <br />
+              l'enfance. Aquarelliste, illustrateur, <br />
+            </div>
+            <div className="home__texte-2">
+              peintre ou graveur, son univers est <br />
+              essentiellement urbain, parfois <br />
+              classique, souvent fantaisiste, <br />
+              intriguant, voire psychédélique...
+              <br />
+            </div>
           </div>
         </div>
         <div>

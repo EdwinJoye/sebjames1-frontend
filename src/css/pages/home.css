@@ -20,6 +20,7 @@
   align-items: flex-end;
   justify-content: space-between;
   /* background-color: yellow; */
+  margin-bottom: 10rem;
   padding-bottom: 20px;
 }
 .home__title {
@@ -29,14 +30,21 @@
 }
 
 .home__title-1 {
-  animation: 5s ease-out SlideInFromLeft;
+  animation: 6.5s ease-out SlideInFromLeftFurther;
+  margin-bottom: 20px;
 }
 .home__title-2 {
-  animation: 2.7©s ease-out SlideInFromBottom;
-}
-.home__title-3 {
   display: flex;
   align-items: baseline;
+  animation: 5s ease-out OuterLeft;
+  margin-bottom: 25px;
+}
+.home__title-3 {
+  animation: 3s ease-out OuterLeft;
+  margin-bottom: 25px;
+}
+.home__title-3 div {
+  margin-bottom: 10px;
 }
 .home__title span {
   font-family: "MigraItalic-ExtraboldItalic";
@@ -47,34 +55,55 @@
   color: white;
   font-family: "TuskerGrotesk-2500Medium";
   font-size: 200px;
-  line-height: 200px;
+  line-height: 180px;
   /* color: transparent; */
   /* -webkit-text-stroke: 1px white; */
 }
 
-.home__texte {
-  /* background-color: pink; */
-  text-align: right;
+.home__texte-container {
   color: white;
   font-size: 30px;
+  text-transform: uppercase;
+  animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+  padding-bottom: 15px;
+}
+.home__texte-1 {
+  text-align: right;
+  animation: inner-left 1s 1s ease both,
+    text-clip 4s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+  animation-delay: 4.5s;
+}
+.home__texte-2 {
+  text-align: left;
+  margin-right: 10rem;
+  animation: text-clip 5s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+  animation-delay: 4s;
 }
 
-@keyframes SlideInFromLeft {
+@keyframes SlideInFromLeftFurther {
   0% {
-    transform: translateX(-1000%);
+    transform: translateX(-500%);
   }
   80% {
-    transform: translateX(2%);
+    transform: translateX(1%);
   }
   100% {
     transform: translateX(0);
   }
 }
-@keyframes SlideInFromBottom {
-  0% {
-    transform: translateY(1000%);
+@keyframes OuterLeft {
+  from {
+    transform: translateX(-100%);
   }
-  100% {
-    transform: translateY(0);
+  to {
+    transform: none;
+  }
+}
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
