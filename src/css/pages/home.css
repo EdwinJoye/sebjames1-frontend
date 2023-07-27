@@ -18,22 +18,21 @@
   height: 100vh;
   display: flex;
   align-items: flex-end;
-  /* padding-bottom: 0px; */
+  justify-content: space-between;
   /* background-color: yellow; */
+  padding-bottom: 20px;
 }
 .home__title {
   display: inline-block;
   bottom: 0;
-  /* background-color: pink; */
+  /* background-color: orange; */
 }
-.home__title:first-child div {
-  margin-bottom: 20px;
-}
+
 .home__title-1 {
   animation: 5s ease-out SlideInFromLeft;
 }
 .home__title-2 {
-  animation: 2.7s ease-out SlideInFromBottom;
+  animation: 2.7©s ease-out SlideInFromBottom;
 }
 .home__title-3 {
   display: flex;
@@ -51,6 +50,13 @@
   line-height: 200px;
   /* color: transparent; */
   /* -webkit-text-stroke: 1px white; */
+}
+
+.home__texte {
+  /* background-color: pink; */
+  text-align: right;
+  color: white;
+  font-size: 30px;
 }
 
 @keyframes SlideInFromLeft {

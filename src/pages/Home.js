@@ -64,6 +64,16 @@ const Home = () => {
               <h1>SEB JAMES</h1>
             </div>
           </div>
+          <div className="home__texte">
+            James est un artiste multiple facette <br />
+            exerçe son métier avec passion depuis l'enfance. <br />
+            à titre provisoire pour calibrer une mise <br />
+            en page, le texte définitif venant remplacer <br />
+            le faux-texte dès qu'il est prêt ou que <br />
+            la mise en page est achevée. Généralement, <br />
+            on utilise un texte en faux latin,le <br />
+            Lorem ipsum ou Lipsum
+          </div>
         </div>
         <div>
           <Propositions></Propositions>
