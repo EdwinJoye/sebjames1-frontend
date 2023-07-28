@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import useFetch from "../hooks/useFetch";
 import { Link, useParams, useLocation } from "react-router-dom";
 import Cart from "../img/icons/cart-white.png";
@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
 import CloseCross from "../img/icons/close-black.png";
 import ArrowBack from "../img/icons/arrowBack-black.png";
+
 import "../css/pages/product.css";
 
 const Product = () => {
@@ -17,6 +18,7 @@ const Product = () => {
   const { referer } = location.state || { referer: "/" };
   const dispatch = useDispatch();
   const { data, loading } = useFetch(`/products/${id}?populate=*`);
+  const overlayRef = useRef(null);
 
   const getGoBackLink = () => {
     if (referer === "portfolio") {
@@ -25,6 +27,11 @@ const Product = () => {
       return "/shop/1";
     }
     return "/";
+  };
+  const handleCloseOverlay = (event) => {
+    if (event.target === overlayRef.current) {
+      setOpen(false);
+    }
   };
 
   return (
@@ -87,20 +94,10 @@ const Product = () => {
                     <b> SebJames</b>
                   </Link>
                 </p>
-                <p>60 x 40 cm</p>
+
+                <p>{data?.attributes?.dimensions}</p>
                 <p className="product__description">
-                  Le Lorem Ipsum est simplement du faux texte employé dans la
-                  composition et la mise en page avant impression. Le Lorem
-                  Ipsum est le faux texte standard de l'imprimerie depuis les
-                  années 1500, quand un imprimeur anonyme assembla ensemble des
-                  morceaux de texte pour réaliser un livre spécimen de polices
-                  de texte. Il n'a pas fait que survivre cinq siècles, mais
-                  s'est aussi adapté à la bureautique informatique, sans que son
-                  contenu n'en soit modifié. Il a été popularisé dans les années
-                  1960 grâce à la vente de feuilles Letraset contenant des
-                  passages du Lorem Ipsum, et, plus récemment, par son inclusion
-                  dans des applications de mise en page de texte, comme Aldus
-                  PageMaker.
+                  {data?.attributes?.description}
                 </p>
                 <div className="product__quantity">
                   <button
@@ -140,14 +137,13 @@ const Product = () => {
       </div>
       {data?.attributes && (
         <div
+          ref={overlayRef}
           className={`product__overlay-container ${
             open ? "" : "product__none"
           } `}
+          onClick={handleCloseOverlay}
         >
           <img
-            onClick={() => {
-              setOpen(false);
-            }}
             src={CloseCross}
             className="product__overlay-close-cross"
             alt="closeCross"

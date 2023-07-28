@@ -46,7 +46,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-
       setVisible(currentScrollPos < prevScrollPos || currentScrollPos === 0);
       setAtTop(currentScrollPos === 0);
       setPrevScrollPos(currentScrollPos);
@@ -138,7 +137,7 @@ const Header = () => {
             <div className="header__dropdown-content">
               {categories?.data?.map((item) => {
                 return (
-                  <Link to="/portfolio/:id" categoryId={item.id}>
+                  <Link key={item.id} to="/portfolio/:id" categoryId={item.id}>
                     <div>
                       <span>{item.attributes.title}</span>
                     </div>

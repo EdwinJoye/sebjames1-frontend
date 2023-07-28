@@ -25,16 +25,9 @@
 }
 .portfolio__menu-right {
   display: flex;
-  justify-content: flex-end;
-  align-content: space-between;
   gap: 40px;
 }
-.portfolio__imgs-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.portfolio__imgs-container a {
+  margin: 5px;
   /* background-color: yellowgreen; */
-}
-.portfolio__img-container {
-  width: 400px;
 }

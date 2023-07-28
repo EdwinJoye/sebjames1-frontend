@@ -1,35 +1,16 @@
 [
-  {
-    "id": "1",
-    "title": "Seul dans sa tête",
-    "date": "08/09/1987",
-    "style": "engraving",
-    "description": "No Description Yet",
-    "img1": "https://res.cloudinary.com/dm0sv9nfx/image/upload/v1687277078/sebjames/gravure_1_4544f61cdb.jpg",
-    "isNew": true,
-    "oldPrice": 19,
-    "price": 120
-  },
-  {
-    "id": "2",
-    "title": "Bois doré",
-    "date": "08/09/1987",
-    "style": "engraving",
-    "description": "No Description Yet",
-    "img1": "https://res.cloudinary.com/dm0sv9nfx/image/upload/v1687277100/sebjames/gravure_10_72354e0901.jpg",
-    "isNew": true,
-    "oldPrice": 19,
-    "price": 150
-  },
+  { "id": "1", "delay": ["outside", "inside"] },
+  { "id": "2", "size": ["small area", "large area"] },
   {
     "id": "3",
-    "title": "La mer rouge",
-    "date": "08/09/1987",
-    "style": "engraving",
-    "description": "No Description Yet",
-    "img1": "https://res.cloudinary.com/dm0sv9nfx/image/upload/v1687277111/sebjames/gravure_11_c0480614a0.jpg",
-    "isNew": true,
-    "oldPrice": 19,
-    "price": 180
-  }
+    "delay": [
+      "urgent",
+      "to define",
+      "in two weeks",
+      "in a month",
+      "in two months",
+      "more"
+    ]
+  },
+  { "id": "2", "size": ["small area", "large area"] }
 ]

@@ -1,7 +1,7 @@
 import useFetch from "../hooks/useFetch";
 import { useState } from "react";
 import Card from "../components/Card";
-// import { useParams } from "react-router-dom";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import "../css/pages/portfolio.css";
 
 const Portfolio = () => {
@@ -31,20 +31,23 @@ const Portfolio = () => {
           })}
         </div>
       </div>
-      <div className="portfolio__imgs-container">
-        {category?.data?.attributes?.products?.data?.map((item) => {
-          return (
-            <div key={item.id} className="portfolio__img-container fadeIn">
-              <Card
-                id={item?.id}
-                goBack={"portfolio"}
-                picture={item?.attributes?.img1?.data[0]?.attributes?.url}
-                title={item?.attributes?.title}
-                date={item?.attributes?.date}
-              ></Card>
-            </div>
-          );
-        })}
+      <div className="portfolio__imgs-container fadeIn">
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+          <Masonry>
+            {category?.data?.attributes?.products?.data?.map((item) => {
+              return (
+                <Card
+                  key={item.id}
+                  id={item?.id}
+                  goBack={"portfolio"}
+                  picture={item?.attributes?.img1?.data[0]?.attributes?.url}
+                  title={item?.attributes?.title}
+                  date={item?.attributes?.date}
+                ></Card>
+              );
+            })}
+          </Masonry>
+        </ResponsiveMasonry>
       </div>
     </div>
   );

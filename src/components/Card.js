@@ -8,7 +8,6 @@ const Card = ({ picture, title, date, id, goBack }) => {
       state={{
         referer: goBack,
       }}
-      // state={{ referer: goBack }}
     >
       <div className="overlay__all-container">
         <div className="overlay__img-container">

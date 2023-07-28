@@ -1,9 +1,6 @@
 .list__all-container {
   background-color: orange;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
-.list__img-container {
-  width: 400px;
+.list__all-container a {
+  margin: 5px;
 }

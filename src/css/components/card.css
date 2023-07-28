@@ -1,14 +1,14 @@
 .overlay__all-container {
   position: relative;
   /* background-color: yellow; */
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-right: 0;
 }
 .overlay__img-container {
   overflow: hidden;
 }
+
 .overlay__img-container img {
-  display: block;
   width: 100%;
 }
 .overlay__container {
