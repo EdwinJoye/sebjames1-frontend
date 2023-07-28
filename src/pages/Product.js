@@ -16,9 +16,11 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const location = useLocation();
   const { referer } = location.state || { referer: "/" };
+  const availability = location.state.availability;
   const dispatch = useDispatch();
   const { data, loading } = useFetch(`/products/${id}?populate=*`);
   const overlayRef = useRef(null);
+  const isDisabled = availability === "not available";
 
   const getGoBackLink = () => {
     if (referer === "portfolio") {
@@ -113,7 +115,9 @@ const Product = () => {
                   </button>
                 </div>
                 <div
-                  className="product__add-button"
+                  className={`product__add-button ${
+                    isDisabled ? "disabled" : ""
+                  }`}
                   onClick={() =>
                     dispatch(
                       addToCart({
@@ -143,11 +147,12 @@ const Product = () => {
           } `}
           onClick={handleCloseOverlay}
         >
-          <img
+          {/* <img
             src={CloseCross}
             className="product__overlay-close-cross"
             alt="closeCross"
-          />
+            onClick={setOpen(false)}
+          /> */}
           <img
             className="product__overlay-img"
             src={data?.attributes[selectedImg]?.data[0]?.attributes?.url}

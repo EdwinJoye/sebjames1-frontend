@@ -83,6 +83,7 @@
 .product__overlay-img {
   max-width: 90%;
   max-height: 80%;
+  cursor: pointer;
 }
 .product__none {
   display: none;
@@ -132,7 +133,8 @@
   cursor: pointer;
 }
 .product__add-button:hover {
-  background-color: rgba(45, 132, 255, 0.75);
+  /* background-color: rgba(45, 132, 255, 0.75); */
+  opacity: 0.8;
 }
 .product__add-button img {
   width: 30px;
@@ -141,6 +143,12 @@
 .product__add-button span {
   font-size: 15px;
   color: white;
+}
+.disabled {
+  cursor: not-allowed;
+}
+.disabled:hover {
+  opacity: 1;
 }
 /* //////////////////////////////////////// RESPONSIVE //////////////////////////////////////// */
 /* //////////////////////////////////////// WIDTH //////////////////////////////////////// */

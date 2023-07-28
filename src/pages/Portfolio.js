@@ -43,6 +43,7 @@ const Portfolio = () => {
                   picture={item?.attributes?.img1?.data[0]?.attributes?.url}
                   title={item?.attributes?.title}
                   date={item?.attributes?.date}
+                  type={item?.attributes.type}
                 ></Card>
               );
             })}
