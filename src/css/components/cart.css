@@ -24,9 +24,16 @@
 .cart__title-close img:hover {
   opacity: 0.5;
 }
-
+.cart__ii-container {
+  max-height: 400px;
+  overflow: scroll;
+  padding: 5px;
+  /* border: 1px solid black; */
+  /* background-color: yellow; */
+}
 .cart__img-infos-container {
   display: flex;
+  align-items: center;
   gap: 10px;
   margin-bottom: 10px;
   border: 1px solid black;
@@ -36,9 +43,11 @@
 }
 .cart__img {
   width: 130px;
+  height: auto;
 }
 .cart__infos-container {
   width: 100%;
+  /* background-color: aqua; */
 }
 .cart__title-icon-container {
   width: 100%;
@@ -57,12 +66,16 @@
   cursor: pointer;
   margin-left: 20px;
 }
-.cart__price-container {
+.cart__desc-price-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
   /* background-color: yellow; */
+}
+.cart__description {
+  max-width: 200px;
+  /* background-color: pink; */
 }
 .cart__price {
   color: #2d84ff;
