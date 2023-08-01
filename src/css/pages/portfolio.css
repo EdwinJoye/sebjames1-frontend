@@ -1,3 +1,6 @@
+.portfolio {
+  /* background-color: yellow; */
+}
 .portfolio__menu-container {
   width: 100%;
   display: flex;
@@ -27,7 +30,11 @@
   display: flex;
   gap: 40px;
 }
+.portfolio__imgs-container {
+  margin-bottom: 50px;
+}
 .portfolio__imgs-container a {
   margin: 5px;
+
   /* background-color: yellowgreen; */
 }

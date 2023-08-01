@@ -16,7 +16,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="container fadeIn">
+    <div className="portfolio container fadeIn">
       <div className="portfolio__menu-container">
         <div className="portfolio__menu-left">
           <span>see all</span>

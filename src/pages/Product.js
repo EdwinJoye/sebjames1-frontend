@@ -38,12 +38,12 @@ const Product = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="fadeIn product">
         {loading ? (
           "loading"
         ) : (
-          <>
+          <div className="product__all-container1">
             <div className="product__arrow-container ">
               <Link to={getGoBackLink()}>
                 <img
@@ -53,7 +53,7 @@ const Product = () => {
                 />
               </Link>
             </div>
-            <div className="product__all-container">
+            <div className="product__all-container2">
               {data?.attributes && (
                 <div className="product__left">
                   {data?.attributes && (
@@ -138,7 +138,7 @@ const Product = () => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
       {data?.attributes && (
@@ -167,7 +167,7 @@ const Product = () => {
           ></ProductOverlay>
         </div>
       )}
-    </div>
+    </>
   );
 };
 export default Product;
