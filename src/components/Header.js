@@ -247,7 +247,7 @@ const Header = () => {
           <span>{totalQuantity()}</span>
         </div>
       </div>
-      {open && <Cart setOpen={setOpen} open={open}></Cart>}
+      {open && <Cart setOpen={setOpen}></Cart>}
     </div>
   );
 };

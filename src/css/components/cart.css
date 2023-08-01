@@ -1,3 +1,7 @@
+.cart {
+  width: 100%;
+  height: 100vh;
+}
 .cart__all-container,
 .cart__home-all-container {
   min-width: 336px;
