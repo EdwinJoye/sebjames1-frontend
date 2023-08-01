@@ -1,13 +1,14 @@
 import React from "react";
 import DeleteIcon from "../img/icons/delete-red.png";
 import CloseIcon from "../img/icons/close-black.png";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { removeItem, resetCart } from "../redux/cartReducer";
 import "../css/components/cart.css";
 
 const Cart = ({ setOpen }) => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
   const totalPrice = () => {
@@ -17,7 +18,9 @@ const Cart = ({ setOpen }) => {
   };
 
   return (
-    <div className="cart__all-container">
+    <div
+      className={isHome ? "cart__home-all-container" : "cart__all-container"}
+    >
       <div className="cart__title-close">
         <h2>Product in you cart</h2>
         <img src={CloseIcon} alt="closeIcon" onClick={() => setOpen(false)} />

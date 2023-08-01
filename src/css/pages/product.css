@@ -85,7 +85,7 @@
 }
 .product__description {
   height: 250px;
-  overflow: scroll;
+  overflow-y: scroll;
   /* background-color: orange; */
 }
 .product__type {
