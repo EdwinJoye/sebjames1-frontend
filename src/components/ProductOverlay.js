@@ -25,14 +25,15 @@ const ProductOverlay = ({ imgOverlay, open, setOpen }) => {
   return (
     <div
       ref={overlayRef}
-      className={`product__overlay-container ${open ? "" : "product__none"} `}
+      className={`productOverlay-container ${
+        open ? "" : "productOverlay__none"
+      } `}
       onClick={handleCloseOverlay}
     >
-      <div className="product__overlay-img-container">
-        <img className="product__overlay-img" src={imgOverlay} alt="img" />
-        {/* <QuickPinchZoom onUpdate={onUpdate}>
-          <img ref={imgRef} src={imgOverlay} />
-        </QuickPinchZoom> */}
+      <div className="productOverlay__img-container">
+        <QuickPinchZoom onUpdate={onUpdate}>
+          <img className="productOverlay__img" ref={imgRef} src={imgOverlay} />
+        </QuickPinchZoom>
       </div>
     </div>
   );

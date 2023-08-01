@@ -1,0 +1,21 @@
+.productOverlay-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 120;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.productOverlay__none {
+  display: none;
+}
+.productOverlay__img-container {
+  max-width: 90%;
+}
+.productOverlay__img {
+  max-width: 100%;
+  max-height: 90vh;
+  cursor: pointer;
+}

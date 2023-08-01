@@ -102,6 +102,7 @@ const Product = () => {
                 <p className="product__description">
                   {data?.attributes?.description}
                 </p>
+                <p className="product__type">{data?.attributes?.type}</p>
                 <div className="product__quantity">
                   <button
                     onClick={() =>
@@ -154,16 +155,16 @@ const Product = () => {
             alt="closeCross"
             onClick={setOpen(false)}
           /> */}
-          <img
+          {/* <img
             className="product__overlay-img"
             src={data?.attributes[selectedImg]?.data[0]?.attributes?.url}
             alt="img"
-          />
-          {/* <ProductOverlay
+          /> */}
+          <ProductOverlay
             imgOverlay={data?.attributes[selectedImg]?.data[0]?.attributes?.url}
             setOpen={setOpen}
             open={open}
-          ></ProductOverlay> */}
+          ></ProductOverlay>
         </div>
       )}
     </div>
