@@ -1,0 +1,80 @@
+.estimateForm {
+  height: 100vh;
+  padding: 5rem 0 5rem 0;
+  margin: 20%;
+  background-color: rgb(245, 242, 242);
+}
+.estimateForm h1 {
+  margin-bottom: 20px;
+}
+.estimateForm-section1,
+.estimateForm-section2 {
+  padding: 20px;
+  /* background-color: green; */
+}
+.estimateForm__section2-all-container {
+  display: flex;
+}
+.estimateForm__infos-container {
+  display: flex;
+  align-items: flex-end;
+}
+.estimateForm__infos-container2 {
+  width: 100%;
+  /* background-color: aqua; */
+}
+.estimateForm__infos {
+  width: 50%;
+  padding: 10px;
+  /* background-color: yellow; */
+}
+.estimateForm__infos-2 {
+  width: 100%;
+  padding: 10px;
+  /* background-color: yellow; */
+}
+.estimateForm__small-title {
+  margin-bottom: 10px;
+}
+.estimateForm__infos input,
+.estimateForm__infos-2 input {
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.estimateForm__infos input::placeholder,
+.estimateForm__infos-2 input::placeholder {
+  padding: 10px;
+}
+.estimateForm__infos-2 select {
+  width: 100%;
+  height: 45px;
+}
+.estimateForm__infos-2 select::placeholder {
+  padding: 10px;
+}
+.estimateForm__description-input {
+  height: 100px !important;
+}
+.estimateForm__description-input::placeholder {
+  position: absolute;
+  top: 0;
+}
+.estimateForm__button-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  /* background-color: aliceblue; */
+}
+.estimateForm__button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: rgba(45, 132, 255, 0.75);
+  cursor: pointer;
+}
+.estimateForm__button:hover {
+  opacity: 0.7;
+}

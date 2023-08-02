@@ -38,3 +38,39 @@ code {
   font-family: "MigraItalic-ExtraboldItalic";
   src: url("../src//fonts//Migra//MigraItalic-ExtraboldItalic.ttf");
 }
+
+/* /////////////////////////// MOON /////////////////////////// */
+
+@font-face {
+  font-family: "Moon-Regular";
+  src: url("../src//fonts//Moon//Moon2.0-Regular.otf");
+}
+@font-face {
+  font-family: "Moon-Bold";
+  src: url("../src//fonts//Moon//Moon2.0-Bold.otf");
+}
+
+/* /////////////////////////// JOSEPHIN /////////////////////////// */
+
+@font-face {
+  font-family: "JosefinSans-Medium";
+  src: url("../src//fonts//Josephin//JosefinSans-Medium.ttf");
+}
+@font-face {
+  font-family: "JosefinSans-Regular";
+  src: url("../src//fonts//Josephin//JosefinSans-Regular.ttf");
+}
+
+/* /////////////////////////// DROIS SANS /////////////////////////// */
+
+@font-face {
+  font-family: "droid-sans.regular";
+  src: url("../src//fonts//DroidSans//droid-sans.regular.ttf");
+}
+
+/* /////////////////////////// BEBAS NEUE /////////////////////////// */
+
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: url("../src//fonts//BebasNeue/BebasNeue-Regular.ttf");
+}

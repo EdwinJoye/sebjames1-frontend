@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Propositions from "../components/Propositions";
 import FeaturedProducts from "../components/FeaturedProducts";
-import Test from "../components/Test";
+import TestPropositions from "../components/TestPropositions";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../css/pages/home.css";
@@ -70,7 +70,7 @@ const Home = () => {
           <Propositions></Propositions>
           <FeaturedProducts type={"available"}></FeaturedProducts>
           <FeaturedProducts type={"new"}></FeaturedProducts>
-          <Test subCategories={"trending"}></Test>
+          <TestPropositions subCategories={"trending"}></TestPropositions>
         </div>
         <div className="home__end-container"></div>
       </div>

@@ -1,7 +1,7 @@
 import "../css/components/featuredProducts.css";
 import useFetch from "../hooks/useFetch";
 
-const Test = () => {
+const TestPropositions = () => {
   const { data, loading, error } = useFetch(`/products?populate=*`);
   return (
     <div>
@@ -26,4 +26,4 @@ const Test = () => {
     </div>
   );
 };
-export default Test;
+export default TestPropositions;

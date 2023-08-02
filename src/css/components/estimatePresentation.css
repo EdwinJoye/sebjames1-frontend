@@ -1,0 +1,66 @@
+.estimatePresentation {
+  height: 100vh;
+  padding: 13rem 13% 10rem 13%;
+  /* background-color: aquamarine; */
+}
+.estimatePresentation__part1-section1 {
+  display: flex;
+  margin-bottom: 40px;
+}
+.estimatePresentation__part1-section1-1,
+.estimatePresentation__part1-section1-2 {
+  width: 50%;
+}
+.estimatePresentation__part1-section1-1 {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: red; */
+}
+.estimatePresentation__part1-title {
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-family: "BebasNeue-Regular";
+}
+.estimatePresentation__5minutes {
+  letter-spacing: 0.1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.estimatePresentation__txt {
+  font-family: "droid-sans.regular";
+}
+.estimatePresentation__txt-button-container {
+  /* background-color: pink; */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.estimatePresentation__img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
+}
+.estimatePresentation__part1-button {
+  border: none;
+  padding: 13px;
+  border-radius: 30px;
+  background-color: rgba(45, 132, 255, 0.75);
+  opacity: 1;
+  margin-top: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.estimatePresentation__part1-button:hover {
+  opacity: 0.7;
+}
+.estimatePresentation__part1-button a {
+  color: white;
+}
+.estimatePresentation__part1-section2 {
+  font-size: 17px;
+}

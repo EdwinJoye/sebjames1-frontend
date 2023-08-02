@@ -10,7 +10,7 @@ const Interviews = () => {
           <div className="interviews__all-container" key={item.id}>
             <div className="interviews__infos-container">
               <div>
-                <h3>{item.attributes.title}</h3>
+                <h2>{item.attributes.title}</h2>
                 <div className="interviews__date">{item.attributes.date}</div>
               </div>
               <span>{item.attributes.article}</span>

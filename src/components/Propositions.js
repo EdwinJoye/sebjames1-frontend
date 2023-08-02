@@ -5,8 +5,8 @@ const Propositions = () => {
   return (
     <div className="propositions__all-container">
       <div className="propositions__title-img-container">
-        <h4>Demander un devis</h4>
-        <Link className="propositions__img-container">
+        <h4>Estimate</h4>
+        <Link to="/estimate" className="propositions__img-container">
           <img
             src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1687818431/sebjames/tableau_9_c9c6a9c566.jpg"
             alt="prop1"

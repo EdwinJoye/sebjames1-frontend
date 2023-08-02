@@ -4,6 +4,7 @@ body {
   overscroll-behavior-y: contain;
   /* background-color: rgb(237, 236, 221); */
   /* background-color: #090e0c; */
+  font-family: "droid-sans.regular";
 }
 * {
   box-sizing: border-box;
@@ -45,11 +46,19 @@ img {
   animation: 2s ease fadeIn;
 }
 .container {
-  margin: 14rem 13% 10rem 13%;
+  margin: 13rem 13% 10rem 13%;
 }
-h3 {
+h1 {
+  font-family: "BebasNeue-Regular";
+}
+h2 {
   color: white;
   text-transform: uppercase;
+}
+h3 {
+  font-size: 20px;
+  font-family: "droid-sans.regular";
+  color: rgba(45, 132, 255, 0.75);
 }
 .black-png {
   -webkit-filter: grayscale(1) invert(1);

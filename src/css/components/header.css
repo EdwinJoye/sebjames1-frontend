@@ -14,7 +14,7 @@
   backdrop-filter: blur(10px);
 }
 .header__top {
-  height: 9rem;
+  height: 8rem;
   transition: height 0.5s;
   background-color: transparent;
 }
@@ -48,7 +48,7 @@
 }
 .header__top .header__left-container,
 .header__top .header__right-container {
-  height: 9rem;
+  height: 8rem;
   transition: height 1.5s;
 }
 .header__left-container {

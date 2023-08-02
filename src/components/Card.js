@@ -9,7 +9,7 @@ const Card = ({ picture, title, date, id, goBack, type }) => {
           <img src={picture} alt={`Shop Item ${id}`} />
         </div>
         <div className="overlay__container">
-          <h3 className="overlay__title">{title}</h3>
+          <h2 className="overlay__title">{title}</h2>
           <div className="overlay__date">{date}</div>
         </div>
       </div>
