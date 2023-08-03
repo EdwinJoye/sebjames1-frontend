@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  padding: 0rem 13% 0rem 13%;
+  /* padding: 0rem 13% 0rem 13%; */
 }
 .estimateForm__title {
   text-align: center;

@@ -1,3 +1,8 @@
+.articles h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  /* background-color: yellow; */
+}
 .articles__article-container {
   gap: 20px;
 }

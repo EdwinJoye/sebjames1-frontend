@@ -4,7 +4,6 @@ import { Link, useParams, useLocation } from "react-router-dom";
 import Cart from "../img/icons/cart-white.png";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
-import CloseCross from "../img/icons/close-black.png";
 import ProductOverlay from "../components/ProductOverlay";
 import ArrowBack from "../img/icons/arrowBack-black.png";
 

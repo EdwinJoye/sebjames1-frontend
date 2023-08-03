@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import "../css/pages/biography.css";
 
 const Biography = () => {
@@ -45,6 +46,7 @@ const Biography = () => {
           transport feroviaire, aérien et routier.
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

@@ -6,8 +6,9 @@ import "../css/pages/articles.css";
 const Articles = () => {
   const { data, loading, error } = useFetch(`/ars?populate=*`);
   return (
-    <div className=" fadeIn">
-      <div className="container">
+    <div className="fadeIn">
+      <div className="container articles">
+        <h1>Articles</h1>
         {error ? (
           "Something wrong"
         ) : loading ? (
@@ -40,8 +41,7 @@ const Articles = () => {
           </div>
         )}
       </div>
-
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

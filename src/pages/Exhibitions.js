@@ -1,7 +1,12 @@
+import Footer from "../components/Footer";
+
 const Exhibitions = () => {
   return (
-    <div className="container fadeIn">
-      <div>Exhibition</div>
+    <div className="exhibitions fadeIn">
+      <div className="container">
+        <div>Exhibition</div>
+      </div>
+      <Footer />
     </div>
   );
 };

@@ -1,7 +1,12 @@
+import Footer from "../components/Footer";
+
 const Contact = () => {
   return (
-    <div className="container fadeIn">
-      <div>CONTACT</div>
+    <div className="contact fadeIn">
+      <div className="container">
+        <div>CONTACT</div>
+      </div>
+      <Footer />
     </div>
   );
 };
