@@ -2,8 +2,9 @@ import "../css/components/estimateForm.css";
 
 const EstimateForm = () => {
   return (
-    <div>
-      <form id="myQuote" className="estimateForm" action="/estimate">
+    <div id="myQuote" className="estimateForm">
+      <h1 className="estimateForm__title">Ask for a quote</h1>
+      <form className="estimateForm__form" action="/estimate">
         <div className="estimateForm-section1">
           <h1>Personal Information</h1>
           <div className="estimateForm__infos-container">
@@ -78,11 +79,11 @@ const EstimateForm = () => {
                   When do you want your project ?
                 </div>
                 <select id="project_time" name="project_time">
-                  <option value="tout_de_suite">right away</option>
-                  <option value="un_mois">in a month</option>
-                  <option value="deux_mois">in two months</option>
-                  <option value="cette_annee">this year</option>
-                  <option value="annee_prochaine">next year</option>
+                  <option value="tout_de_suite">Right away</option>
+                  <option value="un_mois">In a month</option>
+                  <option value="deux_mois">In two months</option>
+                  <option value="cette_annee">This year</option>
+                  <option value="annee_prochaine">Next year</option>
                   <option value="pas_de_date_precise">
                     I don't have a specific date
                   </option>
@@ -98,9 +99,9 @@ const EstimateForm = () => {
                 <input
                   className="estimateForm__description-input"
                   type="text"
-                  name="zipCode"
-                  id="zipCode"
-                  placeholder="Zip Code"
+                  name="description"
+                  id="description"
+                  placeholder="Description of your project"
                 ></input>
               </div>
             </div>

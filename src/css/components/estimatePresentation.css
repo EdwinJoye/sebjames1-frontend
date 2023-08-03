@@ -47,20 +47,21 @@
 }
 .estimatePresentation__part1-button {
   border: none;
-  padding: 13px;
+  padding: 13px 20px;
   border-radius: 30px;
-  background-color: rgba(45, 132, 255, 0.75);
+  background-color: #2d84ff;
   opacity: 1;
   margin-top: 15px;
   text-transform: uppercase;
   cursor: pointer;
 }
 .estimatePresentation__part1-button:hover {
-  opacity: 0.7;
+  background-color: rgba(45, 132, 255, 0.75);
 }
 .estimatePresentation__part1-button a {
   color: white;
 }
 .estimatePresentation__part1-section2 {
+  margin-top: 70px;
   font-size: 17px;
 }
