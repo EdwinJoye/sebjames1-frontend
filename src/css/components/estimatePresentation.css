@@ -56,7 +56,7 @@
   cursor: pointer;
 }
 .estimatePresentation__part1-button:hover {
-  background-color: rgba(45, 132, 255, 0.75);
+  opacity: 0.7;
 }
 .estimatePresentation__part1-button a {
   color: white;

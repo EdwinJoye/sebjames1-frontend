@@ -14,7 +14,7 @@ const Articles = () => {
         ) : loading ? (
           "loading"
         ) : (
-          <div>
+          <>
             <div className="articles__articles-container">
               {data?.map((item) => {
                 return (
@@ -38,7 +38,7 @@ const Articles = () => {
                 );
               })}
             </div>
-          </div>
+          </>
         )}
       </div>
       <Footer />

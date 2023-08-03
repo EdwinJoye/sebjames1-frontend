@@ -30,7 +30,7 @@ const Shop = () => {
       <div className="container shop__all-container">
         <div className="shop__left">
           <div className="shop__filterItem">
-            <h2>Product Category</h2>
+            <h1>Product Category</h1>
             {error ? (
               "Something wrong"
             ) : loading ? (
@@ -54,7 +54,7 @@ const Shop = () => {
             )}
           </div>
           <div className="shop__filterItem">
-            <h2>Filter by price</h2>
+            <h1>Filter by price</h1>
             <div>
               <span>0</span>
               <input
@@ -69,7 +69,7 @@ const Shop = () => {
             </div>
           </div>
           <div className="shop__filterItem">
-            <h2>Sort by</h2>
+            <h1>Sort by</h1>
             <div>
               <input
                 type="radio"

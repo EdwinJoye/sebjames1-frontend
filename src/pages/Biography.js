@@ -13,7 +13,7 @@ const Biography = () => {
       </section>
       <section className="section2">
         <h1>Biographie</h1>
-        <div>
+        <>
           <div>
             Seb James est une espèce endémique aux rues de Sèvres où il sévit
             officielement depuis ses premiers pas dans l'art mural en 1998. Né à
@@ -44,7 +44,7 @@ const Biography = () => {
           formes d'expresion inspirées du graffiti et de l'histoire de l'art
           contemporain. Son univers est fortement empreint de l’histoire du
           transport feroviaire, aérien et routier.
-        </div>
+        </>
       </section>
       <Footer />
     </div>

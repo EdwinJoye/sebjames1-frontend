@@ -44,9 +44,9 @@ const Home = () => {
             </div>
             <div className="home__title-2">
               <h1>WORLD</h1>
-              <div>
+              <>
                 <span>of</span>
-              </div>
+              </>
             </div>
             <div className="home__title-3">
               <h1>SEB JAMES</h1>
@@ -66,12 +66,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div>
-          <Propositions></Propositions>
-          <FeaturedProducts type={"available"}></FeaturedProducts>
-          <FeaturedProducts type={"new"}></FeaturedProducts>
-          <TestPropositions subCategories={"trending"}></TestPropositions>
-        </div>
+        <Propositions></Propositions>
+        <FeaturedProducts type={"available"}></FeaturedProducts>
+        <FeaturedProducts type={"new"}></FeaturedProducts>
+        <TestPropositions subCategories={"trending"}></TestPropositions>
         <div className="home__end-container"></div>
       </div>
     </div>

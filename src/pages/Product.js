@@ -148,17 +148,6 @@ const Product = () => {
           } `}
           onClick={handleCloseOverlay}
         >
-          {/* <img
-            src={CloseCross}
-            className="product__overlay-close-cross"
-            alt="closeCross"
-            onClick={setOpen(false)}
-          /> */}
-          {/* <img
-            className="product__overlay-img"
-            src={data?.attributes[selectedImg]?.data[0]?.attributes?.url}
-            alt="img"
-          /> */}
           <ProductOverlay
             imgOverlay={data?.attributes[selectedImg]?.data[0]?.attributes?.url}
             setOpen={setOpen}
