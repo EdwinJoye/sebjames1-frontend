@@ -1,5 +1,107 @@
-.footer__all-container {
+.footer {
+  padding: 30px 13rem;
+  border-top: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
+  /* background-color: yellow; */
+}
+.footer__top-container {
+  display: flex;
+}
+.footer__infos-selections-container,
+.footer__selections-terms-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 45%;
+  /* background-color: orange; */
+}
+.footer__selections-container-left,
+.footer__selections-container-right {
+  display: flex;
+  gap: 40px;
+  padding: 0 40px;
+  height: 100%;
+  /* background-color: aquamarine; */
+}
+.footer__selections,
+.footer__selections-small {
+  display: flex;
+  flex-direction: column;
+}
+.footer__selections-small {
+  align-items: center;
+}
+.footer__selections h5,
+.footer__selections-small h5 {
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.footer__selections div,
+.footer__selections-small div {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.footer__selections div:hover,
+.footer__selections-small div:hover {
+  opacity: 0.5;
+}
+.footer__img-name-container {
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__img {
   width: 100%;
-  height: 200px;
-  background-color: red;
+  /* height: 100%; */
+}
+.footer__name {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.footer__bottom-container {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: aqua; */
+  margin-top: 10px;
+}
+.footer__terms-container,
+.footer__icon-infos-container {
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  /* margin-bottom: 10px; */
+}
+.footer__contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer__contact {
+  margin-top: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.footer__contact:hover {
+  opacity: 0.5;
+}
+.footer__icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+}
+.footer__date {
+  margin-right: 10px;
+}
+.footer__terms a {
+  margin: 0 10px;
+}
+.footer__terms a {
+  font-weight: 600;
+}
+.footer__terms a:hover {
+  opacity: 0.5;
 }
