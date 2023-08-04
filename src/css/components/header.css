@@ -11,14 +11,16 @@
   height: 6rem;
   border-bottom: 1px solid black;
   transition: transform 0.5s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px) !important;
 }
 .header__top {
-  height: 8rem;
+  height: 7rem;
   transition: height 0.5s;
   background-color: transparent;
+  backdrop-filter: blur(4px);
 }
 .header__home {
+  backdrop-filter: none;
   border-bottom: 1px solid white;
 }
 .header__else {
@@ -48,7 +50,7 @@
 }
 .header__top .header__left-container,
 .header__top .header__right-container {
-  height: 8rem;
+  height: 7rem;
   transition: height 1.5s;
 }
 .header__left-container {

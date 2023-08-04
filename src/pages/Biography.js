@@ -6,7 +6,7 @@ const Biography = () => {
     <div className="biography fadeIn">
       <img
         className="biography__img-top"
-        src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1690821283/sebjames/seb_7f6c26445e.jpg"
+        src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1691145238/sebjames/Sans_titre_c610d1aa3e.png"
         alt=""
       />
       <div className="biography__absolute">
@@ -15,7 +15,7 @@ const Biography = () => {
             <div className="biography__img-text-container">
               <div>
                 <img
-                  className="biography__img-left"
+                  className="biography__img-top-left"
                   src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1691142878/sebjames/Sans_titre_be20e8098e.png"
                   alt="Sèvres"
                 />
@@ -115,7 +115,7 @@ const Biography = () => {
               </div>
               <div>
                 <img
-                  className="biography__img-right"
+                  className="biography__img-bottom-right"
                   src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1691137777/sebjames/100474461_10216175574397532_3411312542608261120_n_8c9832ce98.jpg"
                   alt="gravure"
                 />

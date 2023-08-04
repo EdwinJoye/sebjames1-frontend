@@ -1,18 +1,19 @@
 .biography {
   /* background-color: rgb(24, 23, 23); */
 }
+.biography__img-top {
+  width: 100%;
+  height: 22rem;
+}
 .biography__absolute {
   position: absolute;
-  top: 22rem;
+  top: 18rem;
   animation: 1.2s ease-out SlideFromBottom;
 }
 .biography__all-container {
   padding-bottom: 100px;
 }
-.biography__img-top {
-  width: 100%;
-  height: 28rem;
-}
+
 .biography__infos-container {
   margin: 0 13%;
   padding: 40px;
@@ -25,16 +26,28 @@
   margin-bottom: 20px;
 }
 .biography__img-left,
-.biography__img-right {
+.biography__img-top-left,
+.biography__img-right,
+.biography__img-bottom-right {
   max-width: 500px;
   max-height: 400px;
   margin-bottom: 10px;
 }
+.biography__img-top-left,
 .biography__img-left {
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }
+.biography__img-bottom-right,
 .biography__img-right {
-  border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.biography__img-top-left {
+  border-top-left-radius: 15px;
+}
+.biography__img-bottom-right {
+  border-bottom-right-radius: 15px;
 }
 .biography__subTitle {
   font-size: 12px;
