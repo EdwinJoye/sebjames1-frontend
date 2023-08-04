@@ -8,7 +8,7 @@ const Articles = () => {
   return (
     <div className="fadeIn">
       <div className="container articles">
-        <h1>Articles</h1>
+        <h1>They talk about Seb</h1>
         {error ? (
           "Something wrong"
         ) : loading ? (
@@ -19,7 +19,6 @@ const Articles = () => {
               {data?.map((item) => {
                 return (
                   <div key={item.id} className="articles__article-container">
-                    {console.log("ARTICLES ITEM", item)}
                     {item.attributes.picture.data?.map((pic) => {
                       return (
                         <Article

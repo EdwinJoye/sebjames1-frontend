@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Propositions from "../components/Propositions";
 import FeaturedProducts from "../components/FeaturedProducts";
 import TestPropositions from "../components/TestPropositions";
@@ -9,6 +9,7 @@ import "../css/pages/home.css";
 
 const Home = () => {
   const refBackground = useRef(null);
+  const [myQuote, setMyQuote] = useState("");
 
   const scrollToQuote = () => {
     const quoteElement = document.getElementById("proposition");
@@ -18,6 +19,11 @@ const Home = () => {
         behavior: "smooth",
       });
     }
+  };
+
+  const handleButtonClick = (newQuote) => {
+    scrollToQuote(); // Première action
+    setMyQuote(newQuote); // Deuxième action avec le nouveau mot
   };
 
   useEffect(() => {
@@ -41,13 +47,18 @@ const Home = () => {
       style={{ backgroundColor: "rgba(0,0,0,0)" }}
     >
       <div className={`home__img-bg fixed`}>
+        {console.log("HOME MY QUOTE", myQuote)}
         <img
           className="home__img"
           src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1690450553/sebjames/screen_1_08d919b796.jpg"
           alt="homeBg"
         />
       </div>
-      <div href="#" onClick={scrollToQuote} className="home__icon-container">
+      <div
+        href="#"
+        onClick={() => handleButtonClick("proposition")}
+        className="home__icon-container"
+      >
         <img className="home__icon" src={ArrowDown} alt="arrow" />
       </div>
       <div className="home__content-container">
