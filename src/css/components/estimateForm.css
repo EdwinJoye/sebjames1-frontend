@@ -10,6 +10,7 @@
   margin-bottom: 20px;
 }
 .estimateForm__form {
+  border-radius: 10px;
   background-color: rgb(245, 242, 242);
 }
 .estimateForm-section1,

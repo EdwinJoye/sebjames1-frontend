@@ -2,12 +2,23 @@ import React, { useEffect, useRef } from "react";
 import Propositions from "../components/Propositions";
 import FeaturedProducts from "../components/FeaturedProducts";
 import TestPropositions from "../components/TestPropositions";
+import ArrowDown from "../img/icons/arrowDown-white.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../css/pages/home.css";
 
 const Home = () => {
   const refBackground = useRef(null);
+
+  const scrollToQuote = () => {
+    const quoteElement = document.getElementById("proposition");
+    if (quoteElement) {
+      window.scroll({
+        top: quoteElement.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -35,6 +46,9 @@ const Home = () => {
           src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1690450553/sebjames/screen_1_08d919b796.jpg"
           alt="homeBg"
         />
+      </div>
+      <div href="#" onClick={scrollToQuote} className="home__icon-container">
+        <img className="home__icon" src={ArrowDown} alt="arrow" />
       </div>
       <div className="home__content-container">
         <div className="home__top-container">

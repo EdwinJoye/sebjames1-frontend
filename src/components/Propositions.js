@@ -3,7 +3,7 @@ import "../css/components/propositions.css";
 
 const Propositions = () => {
   return (
-    <div className="propositions__all-container">
+    <div className="propositions__all-container" id="proposition">
       <div className="propositions__title-img-container">
         <h4>Estimate</h4>
         <Link to="/estimate" className="propositions__img-container">

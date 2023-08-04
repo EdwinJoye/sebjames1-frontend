@@ -1,25 +1,13 @@
 .biography {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* background-color: aqua; */
-  font-family: "droid-sans.regular";
+  /* background-color: yellow; */
 }
-.section1 {
+.biography__test {
+  height: 100vh;
   width: 100%;
-  height: 530px;
+  /* background-color: red; */
 }
 .biography__img {
   width: 100%;
-  height: 100%;
 }
-.section2 {
-  /* position: absolute; */
-  width: 80%;
-  top: 370px;
-  z-index: 99;
-  height: 100vh;
-  padding: 40px;
-  background-color: antiquewhite;
+.biography__txt {
 }

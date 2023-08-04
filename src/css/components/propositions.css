@@ -1,9 +1,10 @@
 .propositions__all-container {
   display: flex;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 4rem 0 10rem 0;
+  /* background-color: red; */
 }
 .propositions__title-img-container {
   display: flex;
