@@ -1,3 +1,4 @@
+import Signature from "../img/signatures/signature-black.png";
 import Footer from "../components/Footer";
 import "../css/pages/biography.css";
 
@@ -9,9 +10,17 @@ const Biography = () => {
         src="https://res.cloudinary.com/dm0sv9nfx/image/upload/v1691145238/sebjames/Sans_titre_c610d1aa3e.png"
         alt=""
       />
+
       <div className="biography__absolute">
         <div className="biography__all-container">
           <div className="biography__infos-container">
+            <div className="biography__title-top-container">
+              <div>
+                {/* <img src={Signature} alt="title" /> */}
+                <div>Biography</div>
+                <div className="biography__title-top">Sebastien James</div>
+              </div>
+            </div>
             <div className="biography__img-text-container">
               <div>
                 <img

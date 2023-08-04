@@ -74,3 +74,10 @@ code {
   font-family: "BebasNeue-Regular";
   src: url("../src//fonts//BebasNeue/BebasNeue-Regular.ttf");
 }
+
+/* /////////////////////////// NEBULA /////////////////////////// */
+
+@font-face {
+  font-family: "Nebula-Regular.otf";
+  src: url("../src//fonts//Nebula//Nebula-Regular.otf");
+}

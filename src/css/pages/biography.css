@@ -16,10 +16,31 @@
 
 .biography__infos-container {
   margin: 0 13%;
-  padding: 40px;
+  padding: 20px 40px 40px 40px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px;
   background-color: white;
+}
+.biography__title-top-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  /* background-color: yellow; */
+}
+.biography__title-top {
+  /* font-family: "Nebula-Regular.otf"; */
+  font-family: "BebasNeue-Regular";
+  font-size: 50px;
+  letter-spacing: 0.5px;
+}
+.biography__title-top-container img {
+  /* background-color: aqua; */
+  width: 170px;
+  /* padding: 0 20px 40px 20px; */
+}
+.biography__title-top-container div {
+  /* background-color: yellow; */
+  text-align: center;
 }
 .biography__img-text-container {
   display: flex;

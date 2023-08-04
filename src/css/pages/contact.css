@@ -19,6 +19,7 @@
 .contact__img {
   height: 100%;
   width: 110%;
+  border-radius: 15px;
 }
 .contact__section2 {
   display: flex;
